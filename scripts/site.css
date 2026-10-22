@@ -61,8 +61,8 @@ h3 { font-size: 20px; line-height: 1.3; }
 /* Hero */
 .hero { position: relative; min-height: 420px; display: grid; align-items: end; color: #fff; background: #3a0508; overflow: hidden; }
 .hero-imgs { position: absolute; inset: 0; }
-.hero-imgs img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; margin: 0; opacity: 0; animation: fade 30s infinite; }
-@keyframes fade { 0% { opacity: 0; } 3% { opacity: 1; } 20% { opacity: 1; } 24% { opacity: 0; } 100% { opacity: 0; } }
+.hero-imgs img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; margin: 0; opacity: 0; animation: fade 18s infinite; }
+@keyframes fade { 0% { opacity: 0; } 5% { opacity: 1; } 31% { opacity: 1; } 38% { opacity: 0; } 100% { opacity: 0; } }
 .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(20,0,2,.82), rgba(20,0,2,.15) 70%); }
 .hero-text { position: relative; z-index: 1; max-width: 1080px; width: 100%; margin: 0 auto; padding: 56px 16px 40px; }
 .eyebrow { margin: 0; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; font-size: 13px; opacity: .9; }
@@ -73,7 +73,7 @@ h3 { font-size: 20px; line-height: 1.3; }
 /* Nächster Termin */
 .next { display: grid; grid-template-columns: auto 1fr auto; gap: 20px; align-items: center; background: var(--red); color: #fff; border-radius: var(--radius); padding: 18px 22px; margin: 0 0 28px; }
 .next[hidden] { display: none; }
-.home .next { margin-top: -28px; position: relative; z-index: 2; box-shadow: 0 12px 30px rgba(179,5,15,.35); }
+.home .next { margin-top: 8px; box-shadow: 0 10px 26px rgba(179,5,15,.25); }
 .next-date { text-align: center; line-height: 1; padding-right: 20px; border-right: 1px solid rgba(255,255,255,.4); }
 .next-date b { display: block; font-size: 40px; font-weight: 800; }
 .next-date span { font-size: 13px; text-transform: uppercase; letter-spacing: .08em; }

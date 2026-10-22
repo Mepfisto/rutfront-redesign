@@ -9,13 +9,13 @@ const page = (slug) => pages.find((p) => p.slug === slug);
 
 const ORIGIN = "https://rutfront.koeln";
 const LOGO = `${ORIGIN}/wp-content/uploads/2025/12/faust-single_schriftzug.png`;
+// Scharfe Originale aus der Mediathek (die Slider-Cache-Dateien der echten Seite sind nur 100 px breit).
+// pos = object-position, damit der Bildausschnitt im breiten Hero die Motive trifft.
 const HERO_IMAGES = [
-  "slider/cache/16b385266a7ad3d14131f6872c59e81b/IMG_3678-scaled.png",
-  "slider/cache/2724be9d12328a6f332466b894fff4af/signal-2025-12-08-220045_004.jpg",
-  "slider/cache/6ae58b9f2d2d1fcea83ba7d8801fda09/IMG_4250-scaled.jpg",
-  "slider/cache/7e5478172cc064b6d5691b3e8240fd34/8DB547C3-678A-40EF-9EBA-AC24D68948F5-scaled.jpg",
-  "slider/cache/47386e2eef43e37576564f09ec0461ce/5.png",
-].map((p) => `${ORIGIN}/wp-content/uploads/${p}`);
+  { src: "2026/08/signal-2025-12-08-220045_004.jpeg", pos: "50% 30%" },
+  { src: "2026/06/8DB547C3-678A-40EF-9EBA-AC24D68948F5-2048x1153.jpg", pos: "50% 55%" },
+  { src: "2026/06/IMG_3678-1152x1536.png", pos: "50% 42%" },
+].map((i) => ({ ...i, src: `${ORIGIN}/wp-content/uploads/${i.src}` }));
 
 // Beispiel-Kategorien (die echte Seite hat nur Schlagwörter) und Alt-Texte der Titelbilder.
 const CATEGORY = {
@@ -239,7 +239,8 @@ const eventsFor = (up) => EVENTS.map((e) => ({ ...e, href: `${up}${e.href}` }));
   const lead = body0.match(/<p>[^<]{40,}[\s\S]*?<\/p>/)?.[0] ?? "";
   const video = body0.match(/<div class="yt-wrap">[\s\S]*?<\/div>/)?.[0] ?? "";
   const rest = body0.replace(lead, "").replace(/<p>\s*<div class="yt-wrap">[\s\S]*?<\/div>\s*<\/p>/, "").replace(video, "");
-  const hero = HERO_IMAGES.map((src, i) => `<img src="${src}" alt="" ${i === 0 ? "" : 'loading="lazy"'} style="animation-delay:${i * 6}s">`).join("");
+  const heroStep = 6; // Sekunden pro Bild
+  const hero = HERO_IMAGES.map((img, i) => `<img src="${img.src}" alt="" ${i === 0 ? 'fetchpriority="high"' : 'loading="lazy"'} style="object-position:${img.pos};animation-duration:${HERO_IMAGES.length * heroStep}s;animation-delay:${i * heroStep}s">`).join("");
   const member0 = stripTags((page("mitglied-werden").content.match(/<p[^>]*>Mit einer Mitgliedschaft[\s\S]*?<\/p>/) ?? [""])[0]);
   const member = member0.match(/^.*?[A-Za-zÄÖÜäöüß]{3}\./)?.[0] ?? member0;
   const body = `
