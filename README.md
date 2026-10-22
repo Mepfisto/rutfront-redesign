@@ -62,5 +62,5 @@ kann die Seite weitergeben.
 - Die Kategorien (Termine / Presse / Radio / Verein) sind Beispiele; die echte Seite hat nur Schlagwörter.
   Sie stehen in `scripts/build-site.mjs` (`CATEGORY`).
 - Der Mixcloud-Player im Radio-Beitrag lädt weiterhin sofort.
-- Die Antworten der Kostüm-Ampel sind Entwurfstexte und müssten vom Verein geprüft werden. Bei mehreren Treffern gewinnt das längste Stichwort, bei Gleichstand die strengere Stufe.
+- Die Antworten der Kostüm-Ampel sind Entwurfstexte und müssten vom Verein geprüft werden. Rund 60 Regeln mit etwa 700 Stichwörtern; ein spezifischeres Stichwort überstimmt das allgemeinere, in ihm steckende (Stadtsoldat vor Soldat), sonst gewinnt die strengste Stufe, damit ein harmloses Wort nie ein rotes Stichwort übertönt. Rote Stichwörter erscheinen nicht in der Vorschlagsliste des Eingabefelds.
 - Das Kontaktformular gibt es auf der echten Seite nicht; „Kontakt" ist ein `mailto:`-Link.

@@ -352,7 +352,8 @@ posts.forEach((p, i) => {
 // Kostüm-Ampel
 {
   const chips = kostuem.examples.map((e) => `<button class="k-chip" type="button">${esc(e)}</button>`).join("");
-  const options = [...new Set(kostuem.rules.flatMap((r) => r.keys.map((k) => k.replace(/^=/, ""))).filter((k) => k.length > 3))].sort().map((k) => `<option value="${esc(k)}">`).join("");
+  // Vorschläge im Eingabefeld: nur harmlose Stichwörter, rote (heikle) erscheinen dort nicht
+  const options = [...new Set(kostuem.rules.filter((r) => r.level !== "red").flatMap((r) => r.keys.map((k) => k.replace(/^=/, ""))).filter((k) => k.length > 3))].sort((a, b) => a.localeCompare(b, "de")).map((k) => `<option value="${esc(k)}">`).join("");
   const body = `<div class="container narrow">
   <h1>Kostüm-Ampel</h1>
   <p class="lede">Darfst du dich so verkleiden? Tipp dein Kostüm ein und die Ampel sagt dir, wie es steht.</p>
@@ -374,7 +375,7 @@ posts.forEach((p, i) => {
     <p class="muted">Entwurf: Die Antworten sind Beispiele und müssten vom Verein geprüft werden. Die Eingabe bleibt im Browser, nichts wird gespeichert oder verschickt.</p>
   </aside>
 </div>`;
-  const script = `window.KOSTUEM=${JSON.stringify({ examples: kostuem.examples, fallback: kostuem.fallback, rules: kostuem.rules.map(({ level, keys, title, text, alt }) => ({ level, keys, title, text, alt })) })};\n${kostuemJs}`;
+  const script = `window.KOSTUEM=${JSON.stringify({ examples: kostuem.examples, random: kostuem.random, fallback: kostuem.fallback, rules: kostuem.rules.map(({ level, keys, title, text, alt }) => ({ level, keys, title, text, alt })) })};\n${kostuemJs}`;
   await write("kostuem-ampel", layout({ slug: "kostuem-ampel", title: "Kostüm-Ampel", desc: "Darfst du dich so verkleiden? Die Kostüm-Ampel gibt eine Einschätzung.", body, up: "../", bodyClass: "kostuem", script }));
 }
 
