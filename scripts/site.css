@@ -23,9 +23,9 @@ nav#nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 2px; }
 nav#nav a { display: block; padding: 8px 12px; border-radius: 8px; font-weight: 600; font-size: 14px; letter-spacing: .02em; text-transform: uppercase; color: var(--red); text-decoration: none; }
 nav#nav a:hover { background: var(--soft); }
 nav#nav a[aria-current="page"] { background: var(--red); color: #fff; }
-.has-sub { position: relative; display: flex; align-items: center; }
-.has-sub > a { border-radius: 8px 0 0 8px; padding-right: 4px; }
-.sub-toggle { font: inherit; font-size: 12px; line-height: 1; padding: 13px 10px 13px 4px; background: none; border: 0; border-radius: 0 8px 8px 0; color: var(--red); cursor: pointer; }
+.has-sub { position: relative; display: flex; align-items: stretch; }
+nav#nav .has-sub > a { border-radius: 8px 0 0 8px; padding-right: 4px; }
+.sub-toggle { margin-left: -1px; font: inherit; font-size: 12px; line-height: 1; padding: 0 10px 0 5px; background: none; border: 0; border-radius: 0 8px 8px 0; color: var(--red); cursor: pointer; }
 .sub-toggle span { display: inline-block; transition: transform .15s ease; }
 .has-sub:has(> a[aria-current="page"]) .sub-toggle { background: var(--red); color: #fff; }
 .has-sub.open .sub-toggle span { transform: rotate(180deg); }
@@ -210,7 +210,7 @@ footer .copy { text-align: center; font-size: 13px; color: var(--muted); padding
   .bar { flex-wrap: wrap; }
   nav#nav ul { flex-direction: column; padding-bottom: 8px; }
   .has-sub { display: block; }
-  .has-sub > a { border-radius: 8px; padding-right: 12px; }
+  nav#nav .has-sub > a { border-radius: 8px; padding-right: 12px; }
   .sub-toggle { display: none; }
   nav#nav .sub { position: static; margin-top: 0; opacity: 1; visibility: visible; transform: none; transition: none; box-shadow: none; border: 0; padding: 0 0 0 14px; min-width: 0; }
   nav#nav .sub::before { display: none; }
