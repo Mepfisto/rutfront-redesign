@@ -1,0 +1,6 @@
+.DS_Store
+node_modules/
+.claude/
+# Klartext-Quelle nie committen: Pages-Repos sind auf Free-Accounts öffentlich,
+# sonst läge das Mockup unverschlüsselt im Repo.
+src/
