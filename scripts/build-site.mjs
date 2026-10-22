@@ -240,7 +240,8 @@ const eventsFor = (up) => EVENTS.map((e) => ({ ...e, href: `${up}${e.href}` }));
   const video = body0.match(/<div class="yt-wrap">[\s\S]*?<\/div>/)?.[0] ?? "";
   const rest = body0.replace(lead, "").replace(/<p>\s*<div class="yt-wrap">[\s\S]*?<\/div>\s*<\/p>/, "").replace(video, "");
   const hero = HERO_IMAGES.map((src, i) => `<img src="${src}" alt="" ${i === 0 ? "" : 'loading="lazy"'} style="animation-delay:${i * 6}s">`).join("");
-  const member = stripTags((page("mitglied-werden").content.match(/<p[^>]*>Mit einer Mitgliedschaft[\s\S]*?<\/p>/) ?? [""])[0]).split(/(?<=\.) /)[0];
+  const member0 = stripTags((page("mitglied-werden").content.match(/<p[^>]*>Mit einer Mitgliedschaft[\s\S]*?<\/p>/) ?? [""])[0]);
+  const member = member0.match(/^.*?[A-Za-zÄÖÜäöüß]{3}\./)?.[0] ?? member0;
   const body = `
 <section class="hero">
   <div class="hero-imgs" aria-hidden="true">${hero}</div>

@@ -24,9 +24,9 @@ nav#nav a { display: block; padding: 8px 12px; border-radius: 8px; font-weight: 
 nav#nav a:hover { background: var(--soft); }
 nav#nav a[aria-current="page"] { background: var(--red); color: #fff; }
 .has-sub { position: relative; }
-.sub { display: none; position: absolute; right: 0; top: 100%; min-width: 260px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: 0 12px 30px rgba(0,0,0,.12); padding: 6px !important; flex-direction: column; }
-.has-sub:hover .sub, .has-sub:focus-within .sub { display: flex; }
-.sub a { text-transform: none; font-size: 15px; letter-spacing: 0; }
+nav#nav .sub { display: none; position: absolute; right: 0; top: 100%; min-width: 260px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: 0 12px 30px rgba(0,0,0,.12); padding: 6px; flex-direction: column; }
+nav#nav .has-sub:hover .sub, nav#nav .has-sub:focus-within .sub { display: flex; }
+nav#nav .sub a { text-transform: none; font-size: 15px; letter-spacing: 0; }
 .menu-btn { display: none; margin-left: auto; font: inherit; font-weight: 700; background: var(--red); color: #fff; border: 0; border-radius: 8px; padding: 8px 14px; cursor: pointer; }
 
 /* Layout */
@@ -148,7 +148,8 @@ iframe.yt-frame { width: 100%; aspect-ratio: 16 / 9; border: 0; border-radius: v
 .badge span { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; }
 .badge-tbd { background: var(--soft); color: var(--red-dark); }
 .event h4 { margin: 0 0 6px; font-size: 18px; line-height: 1.3; }
-.event h4 a { color: var(--ink); }
+.event h4 a { color: var(--ink); text-decoration: none; }
+.event h4 a:hover { color: var(--red); text-decoration: underline; }
 .event dl { margin: 0; font-size: 15px; }
 .event dl div { display: grid; grid-template-columns: 28px 1fr; }
 .event dt, .event dd { margin: 0; }
@@ -193,7 +194,7 @@ footer .copy { text-align: center; font-size: 13px; color: var(--muted); padding
   nav#nav.open { display: block; }
   .bar { flex-wrap: wrap; }
   nav#nav ul { flex-direction: column; padding-bottom: 8px; }
-  .sub { display: flex; position: static; box-shadow: none; border: 0; padding: 0 0 0 14px !important; min-width: 0; }
+  nav#nav .sub { display: flex; position: static; box-shadow: none; border: 0; padding: 0 0 0 14px; min-width: 0; }
   .cards { grid-template-columns: 1fr; }
   .events { grid-template-columns: 1fr; }
   .page-elferrat-der-herzen .prose ul { grid-template-columns: repeat(2, 1fr); }
@@ -215,3 +216,5 @@ footer .copy { text-align: center; font-size: 13px; color: var(--muted); padding
   .card img, .post img { transition: none; }
   html { scroll-behavior: auto; }
 }
+.event.past h4 { padding-right: 64px; }
+.prose { overflow-wrap: break-word; }
