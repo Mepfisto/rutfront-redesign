@@ -52,6 +52,11 @@ Dann http://localhost:8792 öffnen. Kein npm-Install nötig (Node 18+).
 3. Im Repo unter Settings → Pages: „Deploy from a branch", Branch `main`, Ordner `/docs`.
 4. Link und Passwort getrennt an die Kollegin / den Kollegen geben.
 
+Passwort passt nicht? `./check-password.sh --sichtbar` prüft lokal gegen `docs/index.html`, ob ein Passwort
+die Seite entschlüsselt (`✔`/`✘`), ohne etwas zu verändern. `./build.sh --sichtbar` zeigt die Eingabe beim
+Setzen eines neuen Passworts. `build.sh` prüft am Ende selbst, ob das eingegebene Passwort die erzeugte
+Seite entschlüsselt.
+
 Das Passwort gehört nie ins Repo. Mit „Auf diesem Gerät merken" reicht eine Eingabe für alle Seiten.
 Der Schutz hält Zufallsbesucher ab, ist aber keine echte Zugriffskontrolle: Wer das Passwort hat,
 kann die Seite weitergeben.

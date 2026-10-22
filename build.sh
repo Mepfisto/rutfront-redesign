@@ -2,23 +2,36 @@
 # Baut die komplette Mockup-Seite und verschlüsselt sie mit StatiCrypt nach docs/ (GitHub Pages).
 #   ./build.sh            Seite bauen und verschlüsseln (Inhalte aus data/)
 #   ./build.sh --refresh  vorher die Inhalte von rutfront.koeln neu laden
+#   ./build.sh --sichtbar Passwort beim Eintippen anzeigen (sieht man Tippfehler), kombinierbar mit --refresh
 # Das Passwort wird abgefragt und nie in eine Datei geschrieben.
 # Alternativ: STATICRYPT_PASSWORD in der Umgebung setzen.
+# Am Ende wird geprüft, ob das eingegebene Passwort die erzeugte Seite wirklich entschlüsselt.
 set -euo pipefail
 cd "$(dirname "$0")"
 
-if [ "${1:-}" = "--refresh" ] || [ ! -f data/pages.json ]; then
+refresh=0
+visible=0
+for arg in "$@"; do
+  case "$arg" in
+    --refresh) refresh=1 ;;
+    --sichtbar) visible=1 ;;
+    *) echo "Unbekannte Option: $arg"; exit 2 ;;
+  esac
+done
+
+if [ "$refresh" = 1 ] || [ ! -f data/pages.json ]; then
   NODE_USE_ENV_PROXY=1 node scripts/fetch-content.mjs
 fi
 node scripts/build-site.mjs
 
 if [ -z "${STATICRYPT_PASSWORD:-}" ]; then
-  # Die Eingabe ist unsichtbar, daher zweimal abfragen, damit sich kein Tippfehler einschleicht.
+  # Die Eingabe ist normalerweise unsichtbar, daher zweimal abfragen, damit sich kein Tippfehler einschleicht.
+  if [ "$visible" = 1 ]; then flags=(-r); else flags=(-r -s); fi
   while true; do
-    read -r -s -p "Passwort für die Seite: " STATICRYPT_PASSWORD
-    echo
-    read -r -s -p "Passwort wiederholen:   " PASSWORD_AGAIN
-    echo
+    read "${flags[@]}" -p "Passwort für die Seite: " STATICRYPT_PASSWORD
+    [ "$visible" = 1 ] || echo
+    read "${flags[@]}" -p "Passwort wiederholen:   " PASSWORD_AGAIN
+    [ "$visible" = 1 ] || echo
     [ "$STATICRYPT_PASSWORD" = "$PASSWORD_AGAIN" ] && [ -n "$STATICRYPT_PASSWORD" ] && break
     echo "Eingaben stimmen nicht überein oder sind leer, bitte nochmal."
   done
@@ -44,5 +57,8 @@ npx --yes staticrypt@3.5.4 dist -r \
 
 mv .enc-tmp/dist docs
 rmdir .enc-tmp
+
+# Selbsttest: entschlüsselt die erzeugte Seite mit dem eben eingegebenen Passwort?
+./check-password.sh docs/index.html
 
 echo "Fertig: docs/ (verschlüsselt). Jetzt committen und pushen."
