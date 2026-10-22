@@ -26,11 +26,11 @@ node scripts/build-site.mjs
 
 if [ -z "${STATICRYPT_PASSWORD:-}" ]; then
   # Die Eingabe ist normalerweise unsichtbar, daher zweimal abfragen, damit sich kein Tippfehler einschleicht.
-  if [ "$visible" = 1 ]; then flags=(-r); else flags=(-r -s); fi
+  if [ "$visible" = 1 ]; then flags=(-r); else flags=(-r -s); fi  # IFS= unten: Leerzeichen bleiben erhalten
   while true; do
-    read "${flags[@]}" -p "Passwort für die Seite: " STATICRYPT_PASSWORD
+    IFS= read "${flags[@]}" -p "Passwort für die Seite: " STATICRYPT_PASSWORD
     [ "$visible" = 1 ] || echo
-    read "${flags[@]}" -p "Passwort wiederholen:   " PASSWORD_AGAIN
+    IFS= read "${flags[@]}" -p "Passwort wiederholen:   " PASSWORD_AGAIN
     [ "$visible" = 1 ] || echo
     [ "$STATICRYPT_PASSWORD" = "$PASSWORD_AGAIN" ] && [ -n "$STATICRYPT_PASSWORD" ] && break
     echo "Eingaben stimmen nicht überein oder sind leer, bitte nochmal."
