@@ -200,7 +200,7 @@ ${body}
 </footer>
 ${events ? `<script>window.EVENTS=${JSON.stringify(events)};</script>` : ""}
 <script>${js}</script>
-<script>window.GLOSSAR=${JSON.stringify(glossar)};${glossarJs}</script>
+<script>window.GLOSSAR=${JSON.stringify(glossar)};window.GLOSSAR_SEITE=${JSON.stringify(slug)};${glossarJs}</script>
 ${script ? `<script>${script}</script>` : ""}
 </body>
 </html>
@@ -387,7 +387,11 @@ for (const slug of ["ueber-uns", "mitglied-werden", "karnevalspolitische-grundsa
   const p = page(slug);
   const html = clean(p.content, "../");
   const wide = ["ueber-uns", "elferrat-der-herzen"].includes(slug);
-  const body = `<div class="container${wide ? "" : " narrow"}"><h1>${p.title}</h1><div class="prose">${html}</div></div>`;
+  // Liederheft: Hinweis und Schalter, der hinter jedem kölschen Wort die hochdeutsche Übersetzung einblendet
+  const transBar = slug === "liederheft"
+    ? `<div class="trans-bar"><p>Kölsche Wörter sind unterstrichen. Antippen oder Darüberfahren zeigt die Übersetzung, oder du blendest sie überall ein.</p><button class="trans-toggle" type="button" aria-pressed="false">Hochdeutsch einblenden</button></div>`
+    : "";
+  const body = `<div class="container${wide ? "" : " narrow"}"><h1>${p.title}</h1>${transBar}<div class="prose">${html}</div></div>`;
   await write(slug, layout({ slug, title: stripTags(p.title), desc: stripTags(html).slice(0, 160), body, up: "../", bodyClass: `page-${slug}` }));
 }
 

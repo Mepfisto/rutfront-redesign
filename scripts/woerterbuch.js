@@ -1,10 +1,18 @@
 (function () {
   var data = window.GLOSSAR;
   if (!data || !data.length) return;
+  var page = window.GLOSSAR_SEITE || "";
 
-  // Ein gemeinsames Muster für alle Wörter, längere zuerst; die Gruppennummer verrät den Eintrag.
+  // Nur Einträge, die auf dieser Seite gelten (Feld "nur"), längere Muster zuerst.
+  // Länge zählt ohne die Wortende-Prüfung "(?![…])", sonst würden kurze Wörter vor längeren Wendungen gewinnen.
+  function rank(e) { return e.re.replace(/\(\?!\[[^\]]*\]\)/g, "").length; }
+  var entries = data.filter(function (e) { return !e.nur || e.nur.indexOf(page) > -1; })
+    .sort(function (a, b) { return (b.prio || 0) - (a.prio || 0) || rank(b) - rank(a); });
+  if (!entries.length) return;
+  function marksAll(e) { return e.alle === true || (Array.isArray(e.alle) && e.alle.indexOf(page) > -1); }
+
+  // Ein gemeinsames Muster für alle Wörter; die Gruppennummer verrät den Eintrag.
   // Nicht mitten in Wörtern, E-Mail-Adressen oder Web-Adressen (davor kein Buchstabe, @, . oder /).
-  var entries = data.slice().sort(function (a, b) { return b.re.length - a.re.length; });
   var big;
   try {
     big = new RegExp("(?<![\\p{L}\\p{N}@./])(?:" + entries.map(function (e) { return "(" + e.re + ")"; }).join("|") + ")", "giu");
@@ -22,14 +30,19 @@
     while ((m = big.exec(text))) {
       var idx = -1;
       for (var i = 1; i < m.length; i++) { if (m[i] !== undefined) { idx = i - 1; break; } }
-      if (idx < 0 || seen[idx]) continue; // nur das erste Vorkommen pro Seite markieren
-      seen[idx] = true;
+      if (idx < 0) continue;
+      var e = entries[idx];
+      if (!marksAll(e)) {
+        if (seen[idx]) continue; // nur das erste Vorkommen pro Seite markieren
+        seen[idx] = true;
+      }
       frag = frag || document.createDocumentFragment();
       if (m.index > last) frag.appendChild(document.createTextNode(text.slice(last, m.index)));
       var s = document.createElement("span");
       s.className = "kw";
       s.tabIndex = 0;
-      s.dataset.tip = entries[idx].tip;
+      s.dataset.tip = e.tip;
+      if (e.kurz) s.dataset.kurz = e.kurz;
       s.textContent = m[0];
       frag.appendChild(s);
       last = m.index + m[0].length;
@@ -52,6 +65,15 @@
     var nodes = [];
     while (walker.nextNode()) nodes.push(walker.currentNode);
     nodes.forEach(mark);
+  });
+
+  // Schalter „Hochdeutsch einblenden“ (z. B. im Liederheft): zeigt die Kurzübersetzung hinter jedem Wort
+  document.querySelectorAll(".trans-toggle").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var on = document.body.classList.toggle("show-trans");
+      b.setAttribute("aria-pressed", on);
+      b.textContent = on ? "Hochdeutsch ausblenden" : "Hochdeutsch einblenden";
+    });
   });
 
   // Tooltip: ein gemeinsames Element, bleibt im sichtbaren Bereich

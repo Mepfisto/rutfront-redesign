@@ -1,5 +1,5 @@
 {
- "_hinweis": "Kölsch-Wörterbuch für Tooltips. re = JavaScript-Regex (ohne einfangende Gruppen, groß/klein egal), tip = Übersetzung. Pro Seite wird jedes Wort nur beim ersten Vorkommen markiert. Entwurfstexte, bitte vom Verein prüfen.",
+ "_hinweis": "Kölsch-Wörterbuch für Tooltips. re = JavaScript-Regex (ohne einfangende Gruppen, groß/klein egal), tip = Übersetzung als Satz, kurz = Kurzübersetzung (wird beim Schalter „Hochdeutsch einblenden“ hinter dem Wort angezeigt), nur = Liste von Seiten, auf denen der Eintrag gilt (Seiten-Kürzel wie in der Adresse, z. B. liederheft), alle = true oder Liste von Seiten, auf denen JEDES Vorkommen markiert wird (sonst nur das erste pro Seite). prio = höhere Zahl gewinnt bei Überschneidungen (sonst das längere Muster). Entwurfstexte, bitte vom Verein prüfen.",
  "eintraege": [
   {
    "re": "Alerta (?:un|und) Alaaf!?",
@@ -7,7 +7,8 @@
   },
   {
    "re": "Alaaf",
-   "tip": "Kölscher Karnevalsruf, etwa „Hoch lebe …!“. Das Gegenstück zum „Helau“ in Düsseldorf oder Mainz."
+   "tip": "Kölscher Karnevalsruf, etwa „Hoch lebe …!“. Das Gegenstück zum „Helau“ in Düsseldorf oder Mainz.",
+   "kurz": "Karnevalsruf"
   },
   {
    "re": "Alerta",
@@ -15,11 +16,16 @@
   },
   {
    "re": "Kütt noch!?",
-   "tip": "Kommt noch: Termin oder Information folgt."
+   "tip": "Kommt noch: Termin oder Information folgt.",
+   "kurz": "Kommt noch!"
   },
   {
    "re": "(?:Front)?[Jj]enoss(?:[:*]?innen|[:*]?in)?",
-   "tip": "Genosse oder Genossin, hier: Mitglied im Verein."
+   "tip": "Genosse oder Genossin, hier: Mitglied im Verein.",
+   "kurz": "Genoss*in",
+   "alle": [
+    "liederheft"
+   ]
   },
   {
    "re": "Joode Jründe Jenoss[:*]in zo wäde",
@@ -71,11 +77,19 @@
   },
   {
    "re": "Kamelle\\p{L}*",
-   "tip": "Bonbons und Süßigkeiten, die im Karneval in die Menge geworfen werden."
+   "tip": "Bonbons und Süßigkeiten, die im Karneval in die Menge geworfen werden.",
+   "kurz": "Bonbons",
+   "alle": [
+    "liederheft"
+   ]
   },
   {
    "re": "Pappnas\\p{L}*",
-   "tip": "Pappnase: die falsche Karnevalsnase, ein Klassiker unter den Kostümteilen."
+   "tip": "Pappnase: die falsche Karnevalsnase, ein Klassiker unter den Kostümteilen.",
+   "kurz": "Pappnase",
+   "alle": [
+    "liederheft"
+   ]
   },
   {
    "re": "Nubbel\\p{L}*",
@@ -86,8 +100,12 @@
    "tip": "Veedel ist kölsch für Stadtviertel. Ein Veedelszug ist ein Karnevalsumzug im Viertel."
   },
   {
-   "re": "Jeck(?:[:*]innen|\\p{L}*)",
-   "tip": "Jeck: Narr, Karnevalist*in. Kölsch „jeck“ heißt verrückt oder närrisch."
+   "re": "Jeck(?:[:*]in(?:nen)?|\\p{L}*)",
+   "tip": "Jeck: Narr, Karnevalist*in. Kölsch „jeck“ heißt verrückt oder närrisch.",
+   "kurz": "Narr, närrisch",
+   "alle": [
+    "liederheft"
+   ]
   },
   {
    "re": "Klüngel\\p{L}*",
@@ -107,11 +125,13 @@
   },
   {
    "re": "He is jet loss",
-   "tip": "Hier ist was los."
+   "tip": "Hier ist was los.",
+   "kurz": "Hier ist was los"
   },
   {
    "re": "fädich",
-   "tip": "Fertig."
+   "tip": "Fertig.",
+   "kurz": "fertig"
   },
   {
    "re": "Enlass",
@@ -128,6 +148,150 @@
   {
    "re": "Dreigestirn",
    "tip": "Prinz, Bauer und Jungfrau: das Kölner Karnevals-Trio."
+  },
+  {
+   "re": "Kölle(?![\\p{L}\\p{N}])",
+   "kurz": "Köln",
+   "tip": "Kölsch für Köln.",
+   "nur": [
+    "liederheft"
+   ],
+   "alle": true
+  },
+  {
+   "re": "simmer(?![\\p{L}\\p{N}])",
+   "kurz": "sind wir",
+   "tip": "„simmer“ heißt „sind wir“: „hier simmer jeck“ = „hier sind wir närrisch“.",
+   "nur": [
+    "liederheft"
+   ],
+   "alle": true
+  },
+  {
+   "re": "jeiht(?![\\p{L}\\p{N}])",
+   "kurz": "geht",
+   "tip": "Kölsch für „geht“: „hier jeiht keiner so schnell mehr weg“.",
+   "nur": [
+    "liederheft"
+   ],
+   "alle": true
+  },
+  {
+   "re": "jesungen(?![\\p{L}\\p{N}])",
+   "kurz": "gesungen",
+   "tip": "Kölsch für „gesungen“ (j statt g wie in „jeiht“, „janz“).",
+   "nur": [
+    "liederheft"
+   ],
+   "alle": true
+  },
+  {
+   "re": "isset(?![\\p{L}\\p{N}])",
+   "kurz": "ist es",
+   "tip": "Zusammengezogen aus „ist es“: „da isset schön“ = „da ist es schön“.",
+   "nur": [
+    "liederheft"
+   ],
+   "alle": true
+  },
+  {
+   "re": "et es janz ejal",
+   "kurz": "es ist ganz egal",
+   "tip": "„et es janz ejal“ = „es ist ganz egal“.",
+   "nur": [
+    "liederheft"
+   ],
+   "alle": true
+  },
+  {
+   "re": "Keine Jeck es illejal",
+   "kurz": "Kein Jeck ist illegal",
+   "tip": "Kölsch für „Kein Jeck ist illegal“, angelehnt an den Slogan „Kein Mensch ist illegal“.",
+   "nur": [
+    "liederheft"
+   ],
+   "alle": true
+  },
+  {
+   "re": "et(?![\\p{L}\\p{N}])",
+   "kurz": "es",
+   "tip": "Kölsch für „es“.",
+   "nur": [
+    "liederheft"
+   ],
+   "alle": true
+  },
+  {
+   "re": "de(?![\\p{L}\\p{N}])",
+   "kurz": "du",
+   "tip": "Kölsch für „du“: „von wo de auch bist“ = „von wo du auch bist“.",
+   "nur": [
+    "liederheft"
+   ],
+   "alle": true
+  },
+  {
+   "re": "komms(?![\\p{L}\\p{N}])",
+   "kurz": "kommst",
+   "tip": "„komms“ ist „kommst“ ohne das t am Ende.",
+   "nur": [
+    "liederheft"
+   ],
+   "alle": true
+  },
+  {
+   "re": "wirs[‘’']",
+   "kurz": "wirst",
+   "tip": "„wirs’“ ist „wirst“ ohne das t am Ende.",
+   "nur": [
+    "liederheft"
+   ],
+   "alle": true
+  },
+  {
+   "re": "Fasteleer(?![\\p{L}\\p{N}])",
+   "kurz": "Karneval",
+   "tip": "Kölsch für Karneval (Fastelovend).",
+   "nur": [
+    "liederheft"
+   ],
+   "alle": true
+  },
+  {
+   "re": "1312(?![\\p{L}\\p{N}])",
+   "kurz": "A-C-A-B",
+   "tip": "Zahlencode für „A.C.A.B.“ (die Buchstaben 1, 3, 1, 2 im Alphabet), ausgeschrieben „All Cops Are Bastards“.",
+   "nur": [
+    "liederheft"
+   ],
+   "alle": false
+  },
+  {
+   "re": "SWAT(?![\\p{L}\\p{N}])",
+   "kurz": "US-Spezialeinheit",
+   "tip": "Englisch „Special Weapons and Tactics“: Spezialeinheit der US-Polizei.",
+   "nur": [
+    "liederheft"
+   ],
+   "alle": false
+  },
+  {
+   "re": "Jeck[:*]in(?:nen)?",
+   "tip": "Jeck*in: Närrin, Karnevalistin (gendergerechte Form von „Jeck“).",
+   "kurz": "Närrin",
+   "alle": [
+    "liederheft"
+   ],
+   "prio": 1
+  },
+  {
+   "re": "Jeckentum\\p{L}*",
+   "tip": "Jeckentum: das Närrische, die Gemeinschaft der Jecken.",
+   "kurz": "Narrentum",
+   "alle": [
+    "liederheft"
+   ],
+   "prio": 1
   }
  ]
 }
