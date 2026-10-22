@@ -1,0 +1,133 @@
+{
+ "_hinweis": "Kölsch-Wörterbuch für Tooltips. re = JavaScript-Regex (ohne einfangende Gruppen, groß/klein egal), tip = Übersetzung. Pro Seite wird jedes Wort nur beim ersten Vorkommen markiert. Entwurfstexte, bitte vom Verein prüfen.",
+ "eintraege": [
+  {
+   "re": "Alerta (?:un|und) Alaaf!?",
+   "tip": "Rutfront-Gruß: „Alerta“ (spanisch: wachsam, bekannt aus dem antifaschistischen Ruf „¡Alerta, alerta, antifascista!“) plus „Alaaf“, dem Kölner Karnevalsruf."
+  },
+  {
+   "re": "Alaaf",
+   "tip": "Kölscher Karnevalsruf, etwa „Hoch lebe …!“. Das Gegenstück zum „Helau“ in Düsseldorf oder Mainz."
+  },
+  {
+   "re": "Alerta",
+   "tip": "Spanisch für „wachsam“. Bekannt aus dem antifaschistischen Ruf „¡Alerta, alerta, antifascista!“."
+  },
+  {
+   "re": "Kütt noch!?",
+   "tip": "Kommt noch: Termin oder Information folgt."
+  },
+  {
+   "re": "(?:Front)?[Jj]enoss(?:[:*]?innen|[:*]?in)?",
+   "tip": "Genosse oder Genossin, hier: Mitglied im Verein."
+  },
+  {
+   "re": "Joode Jründe Jenoss[:*]in zo wäde",
+   "tip": "Gute Gründe, Genoss*in zu werden."
+  },
+  {
+   "re": "Joode Jründe",
+   "tip": "Gute Gründe."
+  },
+  {
+   "re": "Keinmol alleine, emmer zesamme",
+   "tip": "Nie allein, immer zusammen."
+  },
+  {
+   "re": "hätzlich willkumme",
+   "tip": "Herzlich willkommen."
+  },
+  {
+   "re": "hätzlich",
+   "tip": "Herzlich."
+  },
+  {
+   "re": "Wieverfastelovend",
+   "tip": "Weiberfastnacht: der Donnerstag vor Rosenmontag, Auftakt des Straßenkarnevals."
+  },
+  {
+   "re": "Fastelovend\\p{L}*",
+   "tip": "Fastelovend ist kölsch für Karneval (Fastnacht)."
+  },
+  {
+   "re": "Veilchendienstag",
+   "tip": "Der Dienstag nach Rosenmontag, Karnevalsdienstag."
+  },
+  {
+   "re": "Elfte[rn] im Elften",
+   "tip": "Der 11.11. um 11:11 Uhr: Beginn der Karnevalssession."
+  },
+  {
+   "re": "Session\\p{L}*",
+   "tip": "Die Karnevalszeit, vom 11.11. bis Aschermittwoch."
+  },
+  {
+   "re": "Rutfront",
+   "tip": "„Rut“ ist kölsch für „rot“. Rutfront heißt also Rote Front."
+  },
+  {
+   "re": "Rut-Wiess\\p{L}*",
+   "tip": "Rot-Weiß (kölsch rut = rot, wiess = weiß): die Vereinsfarben."
+  },
+  {
+   "re": "Kamelle\\p{L}*",
+   "tip": "Bonbons und Süßigkeiten, die im Karneval in die Menge geworfen werden."
+  },
+  {
+   "re": "Pappnas\\p{L}*",
+   "tip": "Pappnase: die falsche Karnevalsnase, ein Klassiker unter den Kostümteilen."
+  },
+  {
+   "re": "Nubbel\\p{L}*",
+   "tip": "Strohpuppe, die in der Nacht auf Veilchendienstag symbolisch verbrannt wird: der Sündenbock der Session."
+  },
+  {
+   "re": "Veedel\\p{L}*",
+   "tip": "Veedel ist kölsch für Stadtviertel. Ein Veedelszug ist ein Karnevalsumzug im Viertel."
+  },
+  {
+   "re": "Jeck(?:[:*]innen|\\p{L}*)",
+   "tip": "Jeck: Narr, Karnevalist*in. Kölsch „jeck“ heißt verrückt oder närrisch."
+  },
+  {
+   "re": "Klüngel\\p{L}*",
+   "tip": "Klüngel: ein lockeres Netzwerk, in dem man sich gegenseitig hilft. „Klüngeln“ heißt zusammensitzen und Dinge unter Freunden regeln."
+  },
+  {
+   "re": "Kumm loss mer schwaade",
+   "tip": "Komm, lass uns reden."
+  },
+  {
+   "re": "(?:je)?schwaad\\p{L}*",
+   "tip": "Plaudern, schwätzen (kölsch „schwaade“)."
+  },
+  {
+   "re": "Trömmelche",
+   "tip": "Kleine Trommel. „Et Trömmelche jeiht“ heißt: Der Karneval klopft an."
+  },
+  {
+   "re": "He is jet loss",
+   "tip": "Hier ist was los."
+  },
+  {
+   "re": "fädich",
+   "tip": "Fertig."
+  },
+  {
+   "re": "Enlass",
+   "tip": "Einlass."
+  },
+  {
+   "re": "Opwärmer",
+   "tip": "Aufwärmer: Einstimmung vor dem Hauptprogramm."
+  },
+  {
+   "re": "Aanfang",
+   "tip": "Anfang."
+  },
+  {
+   "re": "Dreigestirn",
+   "tip": "Prinz, Bauer und Jungfrau: das Kölner Karnevals-Trio."
+  }
+ ]
+}

@@ -18,6 +18,7 @@ Die Inhalte kommen unverändert von der echten Seite (WordPress-REST-API), das L
 - Chronik als Zeitleiste, Über uns und Elferrat der Herzen als Kartenraster
 - YouTube-Video wird erst nach Klick geladen (Datenschutz); das Vorschaubild wird beim Bauen heruntergeladen und fest eingebettet, beim Seitenaufruf geht keine Anfrage an YouTube
 - Dropdown-Menü mit Pfeil-Schalter: öffnet weich per Hover, Klick auf den Pfeil (Touch, Tastatur) oder Enter, schließt mit Escape, Klick daneben oder Tab hinaus; Hover-Puffer gegen Zuklappen. Dazu Mobilmenü, Alt-Texte für Titelbilder, Skip-Link
+- Neu: **Kölsch-Wörterbuch**: kölsche Wörter im Text (Kütt noch, Jenoss:in, Fastelovend, Alaaf, Kamelle, Nubbel …) sind gepunktet unterstrichen und zeigen beim Darüberfahren, Antippen oder per Tastatur eine kurze Übersetzung. Pro Seite wird jedes Wort nur beim ersten Vorkommen markiert, Links und Überschriften bleiben unberührt (außer den Termin-Titeln). Einträge in `scripts/woerterbuch.json`, Logik in `scripts/woerterbuch.js`
 - Neu: **Kostüm-Ampel** (`/kostuem-ampel/`): Kostüm eintippen, die Ampel zeigt Rot, Gelb oder Grün mit kurzem Kommentar im Rutfront-Ton. Läuft komplett im Browser, nichts wird gespeichert oder verschickt. Teaser auf der Startseite und Eintrag im Menü „Über uns"
 - Impressum und Datenschutz stehen im Footer statt im Menü „Über uns"
 
@@ -29,6 +30,7 @@ Die Inhalte kommen unverändert von der echten Seite (WordPress-REST-API), das L
 | `scripts/build-site.mjs` | baut daraus die Seite nach `dist/` (CSS/JS pro Seite inline) |
 | `scripts/site.css`, `scripts/site.js` | Design und Verhalten |
 | `scripts/kostuem.json`, `scripts/kostuem.js` | Texte und Logik der Kostüm-Ampel (Antworten hier anpassen) |
+| `scripts/woerterbuch.json`, `scripts/woerterbuch.js` | Einträge und Logik des Kölsch-Wörterbuchs (Übersetzungen hier anpassen, Entwurf) |
 | `build.sh` | alles in einem: holen, bauen, mit StatiCrypt verschlüsseln nach `docs/` |
 | `docs/` | die verschlüsselte Seite, wird über GitHub Pages ausgeliefert |
 

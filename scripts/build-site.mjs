@@ -156,6 +156,8 @@ const NAV = [
 const css = await readFile(new URL("./site.css", import.meta.url), "utf8");
 const kostuem = JSON.parse(await readFile(new URL("./kostuem.json", import.meta.url), "utf8"));
 const kostuemJs = await readFile(new URL("./kostuem.js", import.meta.url), "utf8");
+const glossar = JSON.parse(await readFile(new URL("./woerterbuch.json", import.meta.url), "utf8")).eintraege;
+const glossarJs = await readFile(new URL("./woerterbuch.js", import.meta.url), "utf8");
 const js = await readFile(new URL("./site.js", import.meta.url), "utf8");
 
 function layout({ slug, title, desc = "", body, up, bodyClass = "", events = null, script = "" }) {
@@ -198,6 +200,7 @@ ${body}
 </footer>
 ${events ? `<script>window.EVENTS=${JSON.stringify(events)};</script>` : ""}
 <script>${js}</script>
+<script>window.GLOSSAR=${JSON.stringify(glossar)};${glossarJs}</script>
 ${script ? `<script>${script}</script>` : ""}
 </body>
 </html>

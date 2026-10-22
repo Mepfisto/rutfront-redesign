@@ -283,3 +283,10 @@ footer .copy { text-align: center; font-size: 13px; color: var(--muted); padding
   .mini-ampel { grid-auto-flow: column; width: fit-content; }
 }
 @media (prefers-reduced-motion: reduce) { .lamp { transition: none; } }
+
+/* Kölsch-Wörterbuch */
+.kw { border-bottom: 1px dotted var(--red); cursor: help; }
+.kw:hover, .kw:focus-visible { background: var(--soft); }
+#kw-tip { position: fixed; z-index: 60; max-width: min(280px, calc(100vw - 16px)); background: #1c1b1b; color: #fff; font-size: 14px; line-height: 1.4; font-weight: 500; padding: 8px 12px; border-radius: 8px; box-shadow: 0 8px 22px rgba(0,0,0,.28); pointer-events: none; opacity: 0; visibility: hidden; transition: opacity .12s ease, visibility 0s linear .12s; }
+#kw-tip.on { opacity: 1; visibility: visible; transition-delay: 0s; }
+@media (prefers-reduced-motion: reduce) { #kw-tip { transition: none; } }
