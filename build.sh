@@ -13,8 +13,16 @@ fi
 node scripts/build-site.mjs
 
 if [ -z "${STATICRYPT_PASSWORD:-}" ]; then
-  read -r -s -p "Passwort für die Seite: " STATICRYPT_PASSWORD
-  echo
+  # Die Eingabe ist unsichtbar, daher zweimal abfragen, damit sich kein Tippfehler einschleicht.
+  while true; do
+    read -r -s -p "Passwort für die Seite: " STATICRYPT_PASSWORD
+    echo
+    read -r -s -p "Passwort wiederholen:   " PASSWORD_AGAIN
+    echo
+    [ "$STATICRYPT_PASSWORD" = "$PASSWORD_AGAIN" ] && [ -n "$STATICRYPT_PASSWORD" ] && break
+    echo "Eingaben stimmen nicht überein oder sind leer, bitte nochmal."
+  done
+  unset PASSWORD_AGAIN
   export STATICRYPT_PASSWORD
 fi
 
