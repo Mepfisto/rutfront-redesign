@@ -1,0 +1,379 @@
+{
+  "_hinweis": "Entwurfstexte für die Kostüm-Ampel. Der Verein sollte sie prüfen und anpassen. Bei mehreren Treffern gewinnt das längste passende Stichwort, bei Gleichstand die strengere Stufe. Stichwörter werden klein und ohne Umlaute/Akzente verglichen (ü = u, ß = ss). Ein vorangestelltes = heißt: nur als ganzes Wort treffen (z. B. =cop trifft Cop, aber nicht Copilot).",
+  "examples": [
+    "Einhorn",
+    "Pirat",
+    "Pfarrer",
+    "Cowboy",
+    "Polizei",
+    "Rut-Wiess",
+    "Dreigestirn",
+    "Feuerwehr"
+  ],
+  "fallback": {
+    "level": "yellow",
+    "title": "Kenne ich noch nicht",
+    "text": "Dazu hat die Ampel keine Meinung. Faustregel: Figuren und Fantasiewesen gehen fast immer, Menschengruppen eher nicht.",
+    "alt": "Drei Fragen: Macht sich das Kostüm über Menschen lustig, die es ohnehin schwer haben? Ist es die Uniform von Menschen, die Gewalt ausüben? Gehört die Kultur, die du nachahmst, jemand anderem? Bei einem Ja lieber nicht."
+  },
+  "rules": [
+    {
+      "level": "red",
+      "keys": [
+        "polizei",
+        "polizist",
+        "=cop",
+        "=swat",
+        "=1312",
+        "=bulle"
+      ],
+      "title": "Rot: 1312",
+      "text": "Uniformen von Menschen mit Gewaltmonopol bleiben im Rutfront-Karneval zu Hause. Das steht sogar im Liederheft.",
+      "alt": "Pappnase, Hut und ein Beutel Kamelle: macht mehr Freunde."
+    },
+    {
+      "level": "red",
+      "keys": [
+        "soldat",
+        "militar",
+        "armee",
+        "bundeswehr",
+        "tarnfleck",
+        "camouflage"
+      ],
+      "title": "Rot: Kamelle statt Kriegsspielzeug",
+      "text": "Ein Fest für alle braucht keine Tarnfarben. Im Liederheft steht der Soldat ebenfalls auf der Nein-Liste.",
+      "alt": "Konfetti-Kanone statt Tarnfleck."
+    },
+    {
+      "level": "red",
+      "keys": [
+        "cowboy",
+        "sheriff"
+      ],
+      "title": "Rot: Cowboy",
+      "text": "Cowboy steht im Liederheft auf der Nein-Liste, neben SWAT und Soldat.",
+      "alt": "Ein Hut geht trotzdem. Wie wäre es mit einem Zylinder und Glitzer?"
+    },
+    {
+      "level": "red",
+      "keys": [
+        "indianer",
+        "native american",
+        "apache",
+        "federschmuck",
+        "haeuptling",
+        "häuptling",
+        "winnetou"
+      ],
+      "title": "Rot: kein Kopfschmuck-Klischee",
+      "text": "Federschmuck ist für viele Indigene ein heiliges Zeichen und kein Karnevalszubehör.",
+      "alt": "Federn ja, aber als Paradiesvogel, nicht als Kopie einer fremden Kultur."
+    },
+    {
+      "level": "red",
+      "keys": [
+        "scheich",
+        "araber",
+        "orient",
+        "burka",
+        "niqab",
+        "kopftuch",
+        "haremsdame",
+        "dschinn",
+        "bauchtaenzerin"
+      ],
+      "title": "Rot: Kultur ist kein Kostüm",
+      "text": "Eine Religion oder Kultur zum Kostüm zu machen, ist keine Verkleidung, sondern ein Klischee.",
+      "alt": "Aladin-Lampe ohne Klischee? Dann lieber ein Dschinn aus Glitzerrauch. Oder du kommst als Lampe."
+    },
+    {
+      "level": "red",
+      "keys": [
+        "geisha",
+        "chinese",
+        "asiat",
+        "sombrero",
+        "mexikaner",
+        "poncho"
+      ],
+      "title": "Rot: Klischee-Kostüm",
+      "text": "Wenn das Kostüm eine ganze Menschengruppe auf ein Klischee reduziert, ist es eher Spott als Spaß.",
+      "alt": "Such dir eine Figur statt einer Nationalität."
+    },
+    {
+      "level": "red",
+      "keys": [
+        "blackface",
+        "schwarz angemalt",
+        "schwarz anmalen",
+        "schwarz schminken"
+      ],
+      "title": "Rot: Blackfacing ist rassistisch",
+      "text": "Die Hautfarbe anderer Menschen als Kostüm zu tragen, ist ein Rassismus-Klassiker. Bitte nicht.",
+      "alt": "Schminken geht gern: Glitzer, Sterne, Fantasiegesichter."
+    },
+    {
+      "level": "red",
+      "keys": [
+        "nazi",
+        "hitler",
+        "reichsadler",
+        "hakenkreuz",
+        "ss-uniform",
+        "ss uniform",
+        "faschist"
+      ],
+      "title": "Rot: Nein.",
+      "text": "Das Motto der Rutfront lautet antifaschistisch, nicht „kommt drauf an“.",
+      "alt": "Alles andere ist besser. Wirklich alles."
+    },
+    {
+      "level": "red",
+      "keys": [
+        "fluechtling",
+        "flüchtling",
+        "obdachlos",
+        "penner",
+        "behindert",
+        "rollstuhl"
+      ],
+      "title": "Rot: Menschen in schweren Lagen sind kein Kostüm",
+      "text": "Wer es ohnehin schwer hat, soll nicht auch noch die Pointe sein.",
+      "alt": "Du willst helfen? Spende zum Beispiel an unsere Spendenzwecke."
+    },
+    {
+      "level": "yellow",
+      "keys": [
+        "pfarrer",
+        "priester",
+        "nonne",
+        "papst",
+        "kardinal",
+        "bischof",
+        "pastor"
+      ],
+      "title": "Gelb: kölsche Tradition, aber Vorsicht",
+      "text": "Gehört zum Karneval, doch Glaubenssymbole sind vielen heilig. Spott über Gläubige wäre der Punkt, an dem es kippt.",
+      "alt": "Mit einem Augenzwinkern ja, mit Hohn nein. Und Weihwasser bleibt in der Kirche."
+    },
+    {
+      "level": "yellow",
+      "keys": [
+        "funke",
+        "funken",
+        "stadtsoldat",
+        "prinzengarde",
+        "korps",
+        "uniform",
+        "traditionskorps"
+      ],
+      "title": "Gelb: Korpsuniform mit Respekt",
+      "text": "Echte Korpsuniformen sind Handwerk, Tradition und oft Maßarbeit. Nachmachen kann schnell nach Spott aussehen.",
+      "alt": "Lieber im Rut-Wiess-Stil in eigener Version. Oder die Schneiderin fragen."
+    },
+    {
+      "level": "yellow",
+      "keys": [
+        "gangster",
+        "mafia",
+        "waffe",
+        "gewehr",
+        "pistole",
+        "attrappe",
+        "=pate"
+      ],
+      "title": "Gelb: Waffen bleiben im Schrank",
+      "text": "Waffenattrappen sind bei vielen Feiern verboten und verderben schnell die Stimmung.",
+      "alt": "Anzug, Hut und Zigarre aus Schokolade reicht völlig."
+    },
+    {
+      "level": "yellow",
+      "keys": [
+        "feuerwehr",
+        "arzt",
+        "aerztin",
+        "ärztin",
+        "krankenschwester",
+        "sanitaeter",
+        "sanitäter",
+        "pflege",
+        "rettungs"
+      ],
+      "title": "Gelb: Helfer*innen-Uniform",
+      "text": "Meist okay, aber Helfer*innen-Kleidung kann im Ernstfall verwirren. Fantasie hilft.",
+      "alt": "Ein Pappnasen-Doktor mit Spielzeug-Stethoskop macht es klarer."
+    },
+    {
+      "level": "green",
+      "keys": [
+        "rut-wiess",
+        "rut wiess",
+        "rutwiess",
+        "rutfront",
+        "soli-schal",
+        "rot-weiss",
+        "rot weiss"
+      ],
+      "title": "Grün: Rut-Wiess",
+      "text": "Die Vereinsfarben gehen immer. Mit dem Soli-Schal zeigst du außerdem Haltung.",
+      "alt": "Dazu passt ein Kölsch."
+    },
+    {
+      "level": "green",
+      "keys": [
+        "pappnas",
+        "glitzer",
+        "feder",
+        "konfetti",
+        "pailletten",
+        "federboa",
+        "perucke",
+        "perücke"
+      ],
+      "title": "Grün: Pappnas und Glitzer",
+      "text": "Genau das steht im Liederheft: Pappnas, Hut, Glitzer, Federn, alles voll gut.",
+      "alt": "Noch mehr Glitzer geht immer."
+    },
+    {
+      "level": "green",
+      "keys": [
+        "dreigestirn",
+        "prinz",
+        "jungfrau",
+        "bauer",
+        "prinzessin",
+        "karnevalsprinz"
+      ],
+      "title": "Grün: kölsche Klassiker",
+      "text": "Traditionell, kölsch und gern gesehen. Die Rutfront ist ja traditionalistisch.",
+      "alt": "Nimm Glitzer in den Vereinsfarben dazu."
+    },
+    {
+      "level": "green",
+      "keys": [
+        "einhorn",
+        "dino",
+        "drache",
+        "katze",
+        "hund",
+        "biene",
+        "banane",
+        "kartoffel",
+        "papagei",
+        "giraffe",
+        "tier",
+        "pinguin",
+        "flamingo",
+        "=hase",
+        "=baer",
+        "=bar",
+        "fuchs",
+        "=eule",
+        "bunny",
+        "=kuh",
+        "=schaf",
+        "elefant",
+        "eisbaer",
+        "eisbär",
+        "braunbaer",
+        "braunbär",
+        "teddybaer",
+        "teddybär",
+        "osterhase",
+        "hasen"
+      ],
+      "title": "Grün: Tierisch gut",
+      "text": "Tiere und Fantasiewesen gehen fast immer. Niemand fühlt sich auf den Schlips getreten, höchstens auf den Schwanz.",
+      "alt": "Mit Glitzer. Immer mit Glitzer."
+    },
+    {
+      "level": "green",
+      "keys": [
+        "superheld",
+        "batman",
+        "superman",
+        "spiderman",
+        "spider-man",
+        "astronaut",
+        "roboter",
+        "alien",
+        "ausserirdisch",
+        "außerirdisch",
+        "wonder woman"
+      ],
+      "title": "Grün: Heldin oder Held des Abends",
+      "text": "Figuren aus Comic und Weltall sind unproblematisch. Das Cape bitte nicht in die Theke hängen.",
+      "alt": "Zeig dein Alter Ego, es hat bestimmt einen kölschen Namen."
+    },
+    {
+      "level": "green",
+      "keys": [
+        "clown",
+        "zirkus",
+        "narr",
+        "hofnarr",
+        "jecke",
+        "jeck",
+        "pierrot",
+        "harlekin"
+      ],
+      "title": "Grün: Jeck bleibt Jeck",
+      "text": "Der Klassiker unter den Verkleidungen. Der Narr durfte schon im Mittelalter die Wahrheit sagen.",
+      "alt": "Mit roter Pappnase, versteht sich."
+    },
+    {
+      "level": "green",
+      "keys": [
+        "pirat",
+        "seeraeuber",
+        "seeräuber",
+        "piratin",
+        "captain",
+        "kapitaen",
+        "kapitän"
+      ],
+      "title": "Grün: Ahoi",
+      "text": "Seeräuber mit Papagei gehen immer. Den Säbel bitte aus Plastik oder gleich daheim lassen.",
+      "alt": "Und niemand muss das Bein wirklich wegbinden."
+    },
+    {
+      "level": "green",
+      "keys": [
+        "engel",
+        "teufel",
+        "gespenst",
+        "geist",
+        "vampir",
+        "zombie",
+        "hexe",
+        "zauberer",
+        "magier",
+        "=fee",
+        "elfe",
+        "hogwarts",
+        "harry potter"
+      ],
+      "title": "Grün: Himmel, Hölle und Zauberei",
+      "text": "Übernatürliche Wesen sind kostümtechnisch sicher. Bei Hexe darfst du an die Frauen denken, die früher verfolgt wurden.",
+      "alt": "Ein bisschen Nebel schadet nicht."
+    },
+    {
+      "level": "green",
+      "keys": [
+        "hippie",
+        "disco",
+        "70er",
+        "80er",
+        "90er",
+        "punk",
+        "rockstar",
+        "diskokugel",
+        "retro"
+      ],
+      "title": "Grün: Zeitreise",
+      "text": "Jahrzehnte und Musikstile sind eine sichere Wahl. Die Schlaghose steht dir.",
+      "alt": "Mit Playlist für die Kneipe."
+    }
+  ]
+}

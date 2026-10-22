@@ -150,13 +150,15 @@ function parseChronik(html, up) {
 
 const NAV = [
   ["home", "Startseite"], ["aktuelles", "Aktuelles"], ["termine", "Termine"], ["mitglied-werden", "Mitglied werden"],
-  ["ueber-uns", "Über uns", [["karnevalspolitische-grundsaetze", "Karnevalspolitische Grundsätze"], ["chronik", "Chronik"], ["elferrat-der-herzen", "Elferrat der Herzen"], ["liederheft", "Liederheft"]]],
+  ["ueber-uns", "Über uns", [["karnevalspolitische-grundsaetze", "Karnevalspolitische Grundsätze"], ["chronik", "Chronik"], ["elferrat-der-herzen", "Elferrat der Herzen"], ["liederheft", "Liederheft"], ["kostuem-ampel", "Kostüm-Ampel"]]],
 ];
 
 const css = await readFile(new URL("./site.css", import.meta.url), "utf8");
+const kostuem = JSON.parse(await readFile(new URL("./kostuem.json", import.meta.url), "utf8"));
+const kostuemJs = await readFile(new URL("./kostuem.js", import.meta.url), "utf8");
 const js = await readFile(new URL("./site.js", import.meta.url), "utf8");
 
-function layout({ slug, title, desc = "", body, up, bodyClass = "", events = null }) {
+function layout({ slug, title, desc = "", body, up, bodyClass = "", events = null, script = "" }) {
   const active = (s, sub) => s === slug || (sub ?? []).some(([x]) => x === slug) || (s === "aktuelles" && posts.some((p) => p.slug === slug));
   const nav = NAV.map(([s, label, sub]) => {
     const cur = active(s, sub) ? ' aria-current="page"' : "";
@@ -196,6 +198,7 @@ ${body}
 </footer>
 ${events ? `<script>window.EVENTS=${JSON.stringify(events)};</script>` : ""}
 <script>${js}</script>
+${script ? `<script>${script}</script>` : ""}
 </body>
 </html>
 `;
@@ -271,6 +274,11 @@ const eventsFor = (up) => EVENTS.map((e) => ({ ...e, href: `${up}${e.href}` }));
     <div class="section-head"><h2 id="latest-h">Aktuelles</h2><a class="more" href="./aktuelles/">Alle Beiträge →</a></div>
     <div class="cards">${posts.slice(0, 3).map((x) => postCard(x, "./")).join("")}</div>
   </section>
+  <section class="teaser" aria-labelledby="teaser-h">
+    <div class="mini-ampel" aria-hidden="true"><i class="r"></i><i class="y"></i><i class="g"></i></div>
+    <div><h2 id="teaser-h">Kostüm-Ampel</h2><p>Darfst du dich so verkleiden? Tipp dein Kostüm ein, die Ampel sagt dir, wie es steht.</p></div>
+    <a class="btn" href="./kostuem-ampel/">Ausprobieren</a>
+  </section>
   <section class="cta">
     <div><h2>Joode Jründe Jenoss:in zo wäde</h2><p>${esc(member)}</p></div>
     <a class="btn btn-light" href="./mitglied-werden/">Mitglied werden</a>
@@ -339,6 +347,35 @@ posts.forEach((p, i) => {
   const body = `<div class="container narrow"><h1>Chronik</h1>
   <ol class="timeline">${years.map((y) => `<li><h2>${esc(y.year)}</h2>${y.items.map((it) => `<div class="tl-item">${it.date ? `<time>${esc(it.date)}</time>` : ""}<p>${it.text}</p></div>`).join("")}</li>`).join("")}</ol></div>`;
   await write("chronik", layout({ slug: "chronik", title: "Chronik", desc: "Was beim Rutfront Fastelovendsbund bisher passiert ist.", body, up: "../", bodyClass: "chronik" }));
+}
+
+// Kostüm-Ampel
+{
+  const chips = kostuem.examples.map((e) => `<button class="k-chip" type="button">${esc(e)}</button>`).join("");
+  const options = [...new Set(kostuem.rules.flatMap((r) => r.keys.map((k) => k.replace(/^=/, ""))).filter((k) => k.length > 3))].sort().map((k) => `<option value="${esc(k)}">`).join("");
+  const body = `<div class="container narrow">
+  <h1>Kostüm-Ampel</h1>
+  <p class="lede">Darfst du dich so verkleiden? Tipp dein Kostüm ein und die Ampel sagt dir, wie es steht.</p>
+  <div class="k-layout">
+    <div class="ampel" role="img" aria-label="Ampel mit den Lampen Rot, Gelb und Grün"><span class="lamp r"></span><span class="lamp y"></span><span class="lamp g"></span></div>
+    <div class="k-main">
+      <form id="k-form" autocomplete="off">
+        <label for="k-input" class="k-label">Mein Kostüm</label>
+        <div class="k-row"><input id="k-input" type="text" list="k-list" placeholder="z. B. Einhorn, Pirat, Pfarrer …" maxlength="80" required><button class="btn" type="submit">Ampel fragen</button></div>
+        <datalist id="k-list">${options}</datalist>
+      </form>
+      <p class="k-chips" aria-label="Beispiele">${chips}<button class="k-chip k-rnd" id="k-random" type="button">Überrasch mich</button></p>
+      <div id="k-result" class="k-result" role="status" aria-live="polite" hidden></div>
+    </div>
+  </div>
+  <aside class="k-note">
+    <h2>Gut zu wissen</h2>
+    <p>Die Ampel ist ein Denkanstoß mit Augenzwinkern, kein Regelwerk. Wenn du dir unsicher bist, frag im Zweifel das Awareness-Team vor Ort. Bei Rutfront-Veranstaltungen sorgen Awareness-Teams für einen Safer Space für alle.</p>
+    <p class="muted">Entwurf: Die Antworten sind Beispiele und müssten vom Verein geprüft werden. Die Eingabe bleibt im Browser, nichts wird gespeichert oder verschickt.</p>
+  </aside>
+</div>`;
+  const script = `window.KOSTUEM=${JSON.stringify({ examples: kostuem.examples, fallback: kostuem.fallback, rules: kostuem.rules.map(({ level, keys, title, text, alt }) => ({ level, keys, title, text, alt })) })};\n${kostuemJs}`;
+  await write("kostuem-ampel", layout({ slug: "kostuem-ampel", title: "Kostüm-Ampel", desc: "Darfst du dich so verkleiden? Die Kostüm-Ampel gibt eine Einschätzung.", body, up: "../", bodyClass: "kostuem", script }));
 }
 
 // Übrige Seiten (Fließtext)

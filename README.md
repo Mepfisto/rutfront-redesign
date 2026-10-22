@@ -18,6 +18,7 @@ Die Inhalte kommen unverändert von der echten Seite (WordPress-REST-API), das L
 - Chronik als Zeitleiste, Über uns und Elferrat der Herzen als Kartenraster
 - YouTube-Video wird erst nach Klick geladen (Datenschutz); das Vorschaubild wird beim Bauen heruntergeladen und fest eingebettet, beim Seitenaufruf geht keine Anfrage an YouTube
 - Dropdown-Menü per Tastatur bedienbar, Mobilmenü, Alt-Texte für Titelbilder, Skip-Link
+- Neu: **Kostüm-Ampel** (`/kostuem-ampel/`): Kostüm eintippen, die Ampel zeigt Rot, Gelb oder Grün mit kurzem Kommentar im Rutfront-Ton. Läuft komplett im Browser, nichts wird gespeichert oder verschickt. Teaser auf der Startseite und Eintrag im Menü „Über uns"
 - Impressum und Datenschutz stehen im Footer statt im Menü „Über uns"
 
 ## Aufbau
@@ -27,6 +28,7 @@ Die Inhalte kommen unverändert von der echten Seite (WordPress-REST-API), das L
 | `scripts/fetch-content.mjs` | lädt Seiten und Beiträge nach `data/` |
 | `scripts/build-site.mjs` | baut daraus die Seite nach `dist/` (CSS/JS pro Seite inline) |
 | `scripts/site.css`, `scripts/site.js` | Design und Verhalten |
+| `scripts/kostuem.json`, `scripts/kostuem.js` | Texte und Logik der Kostüm-Ampel (Antworten hier anpassen) |
 | `build.sh` | alles in einem: holen, bauen, mit StatiCrypt verschlüsseln nach `docs/` |
 | `docs/` | die verschlüsselte Seite, wird über GitHub Pages ausgeliefert |
 
@@ -60,4 +62,5 @@ kann die Seite weitergeben.
 - Die Kategorien (Termine / Presse / Radio / Verein) sind Beispiele; die echte Seite hat nur Schlagwörter.
   Sie stehen in `scripts/build-site.mjs` (`CATEGORY`).
 - Der Mixcloud-Player im Radio-Beitrag lädt weiterhin sofort.
+- Die Antworten der Kostüm-Ampel sind Entwurfstexte und müssten vom Verein geprüft werden. Bei mehreren Treffern gewinnt das längste Stichwort, bei Gleichstand die strengere Stufe.
 - Das Kontaktformular gibt es auf der echten Seite nicht; „Kontakt" ist ein `mailto:`-Link.
