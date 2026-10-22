@@ -1,9 +1,16 @@
 #!/usr/bin/env bash
-# Verschlüsselt src/index.html mit StatiCrypt nach docs/index.html (GitHub Pages).
+# Baut die komplette Mockup-Seite und verschlüsselt sie mit StatiCrypt nach docs/ (GitHub Pages).
+#   ./build.sh            Seite bauen und verschlüsseln (Inhalte aus data/)
+#   ./build.sh --refresh  vorher die Inhalte von rutfront.koeln neu laden
 # Das Passwort wird abgefragt und nie in eine Datei geschrieben.
 # Alternativ: STATICRYPT_PASSWORD in der Umgebung setzen.
 set -euo pipefail
 cd "$(dirname "$0")"
+
+if [ "${1:-}" = "--refresh" ] || [ ! -f data/pages.json ]; then
+  NODE_USE_ENV_PROXY=1 node scripts/fetch-content.mjs
+fi
+node scripts/build-site.mjs
 
 if [ -z "${STATICRYPT_PASSWORD:-}" ]; then
   read -r -s -p "Passwort für die Seite: " STATICRYPT_PASSWORD
@@ -11,11 +18,14 @@ if [ -z "${STATICRYPT_PASSWORD:-}" ]; then
   export STATICRYPT_PASSWORD
 fi
 
-npx --yes staticrypt@3.5.4 src/index.html \
-  --directory docs \
+# StatiCrypt behält den Namen des Eingabeordners (docs/dist/...), daher erst in einen
+# temporären Ordner schreiben und dann nach docs/ verschieben.
+rm -rf docs .enc-tmp
+npx --yes staticrypt@3.5.4 dist -r \
+  --directory .enc-tmp \
   --short \
   --remember 7 \
-  --template-title "Rutfront Aktuelles – Entwurf (geschützt)" \
+  --template-title "Rutfront Redesign – Entwurf (geschützt)" \
   --template-instructions "Entwurf, nur für eingeladene Personen." \
   --template-placeholder "Passwort" \
   --template-button "Öffnen" \
@@ -24,4 +34,7 @@ npx --yes staticrypt@3.5.4 src/index.html \
   --template-color-primary "#e30613" \
   --template-color-secondary "#fbf4f4"
 
-echo "Fertig: docs/index.html (verschlüsselt). Jetzt committen und pushen."
+mv .enc-tmp/dist docs
+rmdir .enc-tmp
+
+echo "Fertig: docs/ (verschlüsselt). Jetzt committen und pushen."
