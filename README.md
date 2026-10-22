@@ -17,7 +17,7 @@ Die Inhalte kommen unverändert von der echten Seite (WordPress-REST-API), das L
 - Termine als Karten mit Datumsbadge; vergangene Termine werden ausgegraut
 - Chronik als Zeitleiste, Über uns und Elferrat der Herzen als Kartenraster
 - YouTube-Video wird erst nach Klick geladen (Datenschutz); das Vorschaubild wird beim Bauen heruntergeladen und fest eingebettet, beim Seitenaufruf geht keine Anfrage an YouTube
-- Dropdown-Menü per Tastatur bedienbar, Mobilmenü, Alt-Texte für Titelbilder, Skip-Link
+- Dropdown-Menü mit Pfeil-Schalter: öffnet weich per Hover, Klick auf den Pfeil (Touch, Tastatur) oder Enter, schließt mit Escape, Klick daneben oder Tab hinaus; Hover-Puffer gegen Zuklappen. Dazu Mobilmenü, Alt-Texte für Titelbilder, Skip-Link
 - Neu: **Kostüm-Ampel** (`/kostuem-ampel/`): Kostüm eintippen, die Ampel zeigt Rot, Gelb oder Grün mit kurzem Kommentar im Rutfront-Ton. Läuft komplett im Browser, nichts wird gespeichert oder verschickt. Teaser auf der Startseite und Eintrag im Menü „Über uns"
 - Impressum und Datenschutz stehen im Footer statt im Menü „Über uns"
 

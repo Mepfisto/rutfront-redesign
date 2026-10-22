@@ -163,7 +163,7 @@ function layout({ slug, title, desc = "", body, up, bodyClass = "", events = nul
   const nav = NAV.map(([s, label, sub]) => {
     const cur = active(s, sub) ? ' aria-current="page"' : "";
     if (!sub) return `<li><a href="${href(up, s)}"${cur}>${label}</a></li>`;
-    return `<li class="has-sub"><a href="${href(up, s)}"${cur}>${label}</a><ul class="sub">${sub.map(([x, l]) => `<li><a href="${href(up, x)}"${x === slug ? ' aria-current="page"' : ""}>${l}</a></li>`).join("")}</ul></li>`;
+    return `<li class="has-sub"><a href="${href(up, s)}"${cur}>${label}</a><button class="sub-toggle" type="button" aria-expanded="false" aria-controls="sub-${s}" aria-label="Untermenü von ${label}"><span aria-hidden="true">▾</span></button><ul class="sub" id="sub-${s}">${sub.map(([x, l]) => `<li><a href="${href(up, x)}"${x === slug ? ' aria-current="page"' : ""}>${l}</a></li>`).join("")}</ul></li>`;
   }).join("");
   return `<!doctype html>
 <html lang="de">

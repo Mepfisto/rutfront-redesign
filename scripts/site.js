@@ -10,6 +10,39 @@
     btn.setAttribute("aria-expanded", open);
   });
 
+  // Untermenü: per Pfeil-Schalter (Touch, Tastatur), Escape, Klick daneben oder Tab hinaus schließen
+  function closeSubs(focusToggle) {
+    $$(".has-sub.open").forEach(function (li) {
+      li.classList.remove("open");
+      var t = $(".sub-toggle", li);
+      t.setAttribute("aria-expanded", "false");
+      if (focusToggle) t.focus();
+    });
+  }
+  $$(".sub-toggle").forEach(function (t) {
+    var li = t.parentNode;
+    t.addEventListener("click", function (e) {
+      e.stopPropagation();
+      var open = !li.classList.contains("open");
+      closeSubs(false);
+      li.classList.toggle("open", open);
+      t.setAttribute("aria-expanded", open);
+    });
+    li.addEventListener("focusout", function (e) {
+      if (!li.contains(e.relatedTarget)) closeSubs(false);
+    });
+  });
+  document.addEventListener("click", function () { closeSubs(false); });
+  document.addEventListener("keydown", function (e) {
+    if (e.key !== "Escape") return;
+    closeSubs(true);
+    // auch bei ruhender Maus über dem Menü schließen, bis der Zeiger den Bereich verlässt
+    $$(".has-sub").forEach(function (li) { li.classList.add("esc"); });
+  });
+  $$(".has-sub").forEach(function (li) {
+    li.addEventListener("mouseleave", function () { li.classList.remove("esc"); });
+  });
+
   // YouTube erst nach Klick laden
   $$(".yt").forEach(function (b) {
     b.addEventListener("click", function () {

@@ -23,10 +23,25 @@ nav#nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 2px; }
 nav#nav a { display: block; padding: 8px 12px; border-radius: 8px; font-weight: 600; font-size: 14px; letter-spacing: .02em; text-transform: uppercase; color: var(--red); text-decoration: none; }
 nav#nav a:hover { background: var(--soft); }
 nav#nav a[aria-current="page"] { background: var(--red); color: #fff; }
-.has-sub { position: relative; }
-nav#nav .sub { display: none; position: absolute; right: 0; top: 100%; min-width: 260px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: 0 12px 30px rgba(0,0,0,.12); padding: 6px; flex-direction: column; }
-nav#nav .has-sub:hover .sub, nav#nav .has-sub:focus-within .sub { display: flex; }
-nav#nav .sub a { text-transform: none; font-size: 15px; letter-spacing: 0; }
+.has-sub { position: relative; display: flex; align-items: center; }
+.has-sub > a { border-radius: 8px 0 0 8px; padding-right: 4px; }
+.sub-toggle { font: inherit; font-size: 12px; line-height: 1; padding: 13px 10px 13px 4px; background: none; border: 0; border-radius: 0 8px 8px 0; color: var(--red); cursor: pointer; }
+.sub-toggle span { display: inline-block; transition: transform .15s ease; }
+.has-sub:has(> a[aria-current="page"]) .sub-toggle { background: var(--red); color: #fff; }
+.has-sub.open .sub-toggle span { transform: rotate(180deg); }
+/* Untermenü: weich ein- und ausblenden, etwas Abstand zum Kopf; beim Schließen kurze Verzögerung, damit es nicht
+   zuklappt, wenn die Maus kurz daneben fährt */
+nav#nav .sub { display: flex; flex-direction: column; position: absolute; right: 0; top: 100%; margin-top: 16px; min-width: 260px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: 0 12px 30px rgba(0,0,0,.12); padding: 6px; opacity: 0; visibility: hidden; transform: translateY(-4px); transition: opacity .15s ease, transform .15s ease, visibility 0s linear .2s; }
+/* unsichtbare Brücke zwischen Link und Untermenü, damit der Mauszeiger die Lücke ohne Zuklappen überquert */
+nav#nav .sub::before { content: ""; position: absolute; left: 0; right: 0; top: -18px; height: 18px; }
+nav#nav .has-sub.open .sub { opacity: 1; visibility: visible; transform: none; transition-delay: 0s; }
+@media (hover: hover) {
+  nav#nav .has-sub:hover:not(.esc) .sub { opacity: 1; visibility: visible; transform: none; transition-delay: 0s; }
+  nav#nav .has-sub:hover > a, nav#nav .has-sub:hover .sub-toggle { background: var(--soft); }
+  nav#nav .has-sub:hover > a[aria-current="page"], nav#nav .has-sub:hover > a[aria-current="page"] + .sub-toggle { background: var(--red); }
+  .has-sub:hover .sub-toggle span { transform: rotate(180deg); }
+}
+nav#nav .sub a { text-transform: none; font-size: 15px; letter-spacing: 0; border-radius: 8px; }
 .menu-btn { display: none; margin-left: auto; font: inherit; font-weight: 700; background: var(--red); color: #fff; border: 0; border-radius: 8px; padding: 8px 14px; cursor: pointer; }
 
 /* Layout */
@@ -194,7 +209,11 @@ footer .copy { text-align: center; font-size: 13px; color: var(--muted); padding
   nav#nav.open { display: block; }
   .bar { flex-wrap: wrap; }
   nav#nav ul { flex-direction: column; padding-bottom: 8px; }
-  nav#nav .sub { display: flex; position: static; box-shadow: none; border: 0; padding: 0 0 0 14px; min-width: 0; }
+  .has-sub { display: block; }
+  .has-sub > a { border-radius: 8px; padding-right: 12px; }
+  .sub-toggle { display: none; }
+  nav#nav .sub { position: static; margin-top: 0; opacity: 1; visibility: visible; transform: none; transition: none; box-shadow: none; border: 0; padding: 0 0 0 14px; min-width: 0; }
+  nav#nav .sub::before { display: none; }
   .cards { grid-template-columns: 1fr; }
   .events { grid-template-columns: 1fr; }
   .page-elferrat-der-herzen .prose ul { grid-template-columns: repeat(2, 1fr); }
@@ -214,6 +233,7 @@ footer .copy { text-align: center; font-size: 13px; color: var(--muted); padding
   .hero-imgs img { animation: none; }
   .hero-imgs img:first-child { opacity: 1; }
   .card img, .post img { transition: none; }
+  nav#nav .sub, .sub-toggle span { transition: none; }
   html { scroll-behavior: auto; }
 }
 .event.past h4 { padding-right: 64px; }
