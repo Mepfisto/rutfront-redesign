@@ -1,6 +1,7 @@
 // Baut aus data/*.json die komplette Mockup-Seite nach dist/ (reines HTML, CSS/JS inline).
 // Aufruf: node scripts/build-site.mjs
 import { readFile, writeFile, mkdir, rm } from "node:fs/promises";
+import { existsSync, readFileSync } from "node:fs";
 
 const pages = JSON.parse(await readFile("data/pages.json", "utf8"));
 const allPosts = JSON.parse(await readFile("data/posts.json", "utf8"));
@@ -75,7 +76,13 @@ function clean(html, up) {
 }
 
 function lite(id, title) {
-  return `<div class="yt-wrap"><button class="yt" type="button" data-id="${esc(id)}" data-title="${esc(title)}" aria-label="Video abspielen: ${esc(title)}"><span class="yt-play" aria-hidden="true"></span><span class="yt-title">${esc(title)}</span></button><p class="yt-note">Mit dem Klick wird das Video von YouTube geladen.</p></div>`;
+  // Vorschaubild als Data-URI einbetten (data/yt-<id>.jpg, siehe fetch-content.mjs), damit beim Aufruf
+  // der Seite keine Anfrage an YouTube geht.
+  const file = `data/yt-${id}.jpg`;
+  const style = existsSync(file)
+    ? ` style="background-image:linear-gradient(to top,rgba(0,0,0,.7),rgba(0,0,0,0) 45%),url(data:image/jpeg;base64,${readFileSync(file).toString("base64")})"`
+    : "";
+  return `<div class="yt-wrap"><button class="yt" type="button" data-id="${esc(id)}" data-title="${esc(title)}"${style} aria-label="Video abspielen: ${esc(title)}"><span class="yt-play" aria-hidden="true"></span><span class="yt-title">${esc(title)}</span></button><p class="yt-note">Mit dem Klick wird das Video von YouTube geladen.</p></div>`;
 }
 
 // ---------- Termine / Chronik: strukturierte Darstellung ----------

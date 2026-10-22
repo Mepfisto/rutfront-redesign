@@ -34,4 +34,22 @@ const slim = (x) => ({
 await writeFile("data/pages.json", JSON.stringify(pages.map(slim), null, 1));
 await writeFile("data/posts.json", JSON.stringify(posts.map(slim), null, 1));
 await writeFile("data/home.html", home);
+// YouTube-Vorschaubilder einmal laden, damit die Seite sie fest einbinden kann und beim
+// Aufruf keine Anfrage an YouTube/Google geht (das Video selbst lädt erst nach Klick).
+const ids = new Set();
+for (const x of [...pages, ...posts]) {
+  for (const m of x.content.rendered.matchAll(/youtube\.com\/embed\/([\w-]+)/g)) ids.add(m[1]);
+}
+for (const id of ids) {
+  for (const name of ["maxresdefault", "sddefault", "hqdefault"]) {
+    const res = await fetch(`https://i.ytimg.com/vi/${id}/${name}.jpg`);
+    if (!res.ok) continue;
+    const buf = Buffer.from(await res.arrayBuffer());
+    if (buf.length < 5000) continue; // YouTube liefert für fehlende Größen ein kleines Platzhalterbild
+    await writeFile(`data/yt-${id}.jpg`, buf);
+    console.log(`thumbnail ${id}: ${name}, ${Math.round(buf.length / 1024)} KB`);
+    break;
+  }
+}
+
 console.log(`pages: ${pages.length}, posts: ${posts.length}`);

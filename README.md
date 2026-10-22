@@ -16,7 +16,7 @@ Die Inhalte kommen unverändert von der echten Seite (WordPress-REST-API), das L
 - Aktuelles als einspaltige Liste mit festen 16:9-Vorschaubildern statt Masonry-Kacheln, mit Kategorie-Chips und Suche
 - Termine als Karten mit Datumsbadge; vergangene Termine werden ausgegraut
 - Chronik als Zeitleiste, Über uns und Elferrat der Herzen als Kartenraster
-- YouTube-Video wird erst nach Klick geladen (Datenschutz)
+- YouTube-Video wird erst nach Klick geladen (Datenschutz); das Vorschaubild wird beim Bauen heruntergeladen und fest eingebettet, beim Seitenaufruf geht keine Anfrage an YouTube
 - Dropdown-Menü per Tastatur bedienbar, Mobilmenü, Alt-Texte für Titelbilder, Skip-Link
 - Impressum und Datenschutz stehen im Footer statt im Menü „Über uns"
 
