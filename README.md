@@ -57,6 +57,11 @@ die Seite entschlüsselt (`✔`/`✘`), ohne etwas zu verändern. `./build.sh --
 Setzen eines neuen Passworts. `build.sh` prüft am Ende selbst, ob das eingegebene Passwort die erzeugte
 Seite entschlüsselt.
 
+Das Passwort darf nur aus ASCII-Zeichen bestehen (Buchstaben ohne Umlaute, Ziffern, gewöhnliche Satzzeichen): Umlaute und
+Sonderzeichen sind je nach Programm unterschiedlich kodiert (ü als ein Zeichen oder als u plus Punkte), dann wird das
+Passwort im Browser abgelehnt, obwohl es gleich aussieht. `build.sh` lehnt solche Passwörter ab. Im Passwortmanager
+ein Passwort „ohne Sonderzeichen“ oder eine Passphrase aus Wörtern erzeugen.
+
 Das Passwort gehört nie ins Repo. Mit „Auf diesem Gerät merken" reicht eine Eingabe für alle Seiten.
 Der Schutz hält Zufallsbesucher ab, ist aber keine echte Zugriffskontrolle: Wer das Passwort hat,
 kann die Seite weitergeben.

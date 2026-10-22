@@ -32,8 +32,19 @@ if [ -z "${STATICRYPT_PASSWORD:-}" ]; then
     [ "$visible" = 1 ] || echo
     IFS= read "${flags[@]}" -p "Passwort wiederholen:   " PASSWORD_AGAIN
     [ "$visible" = 1 ] || echo
-    [ "$STATICRYPT_PASSWORD" = "$PASSWORD_AGAIN" ] && [ -n "$STATICRYPT_PASSWORD" ] && break
-    echo "Eingaben stimmen nicht überein oder sind leer, bitte nochmal."
+    if [ "$STATICRYPT_PASSWORD" != "$PASSWORD_AGAIN" ] || [ -z "$STATICRYPT_PASSWORD" ]; then
+      echo "Eingaben stimmen nicht überein oder sind leer, bitte nochmal."
+      continue
+    fi
+    # Umlaute und Sonderzeichen können je nach Programm unterschiedlich kodiert sein (z. B. ü als ein Zeichen
+    # oder als u plus Punkte). Dann stimmt das Passwort im Browser nicht, obwohl es gleich aussieht.
+    if printf %s "$STATICRYPT_PASSWORD" | LC_ALL=C grep -q '[^ -~]'; then
+      echo "Das Passwort enthält Nicht-ASCII-Zeichen (Umlaute, ß, €, typografische Anführungszeichen …)."
+      echo "Bitte nur Buchstaben ohne Umlaute, Ziffern und gewöhnliche Satzzeichen verwenden, sonst kann es im"
+      echo "Browser abgelehnt werden. Neu eingeben:"
+      continue
+    fi
+    break
   done
   unset PASSWORD_AGAIN
   export STATICRYPT_PASSWORD
