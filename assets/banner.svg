@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="220" viewBox="0 0 1200 220" role="img" aria-labelledby="t d">
+  <title id="t">Rutfront Redesign: Mockup online ansehen</title>
+  <desc id="d">Banner mit Link zum passwortgeschützten Mockup auf GitHub Pages</desc>
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e30613"/>
+      <stop offset="1" stop-color="#8f0410"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="220" rx="16" fill="url(#g)"/>
+  <g font-family="Inter, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" fill="#fff">
+    <text x="60" y="84" font-size="22" font-weight="700" letter-spacing="3" opacity=".9">RUTFRONT FASTELOVENDSBUND E.V.</text>
+    <text x="60" y="140" font-size="52" font-weight="800">Redesign-Mockup ansehen →</text>
+    <text x="60" y="184" font-size="22" opacity=".92">mepfisto.github.io/rutfront-redesign · passwortgeschützter Entwurf</text>
+  </g>
+</svg>

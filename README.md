@@ -1,3 +1,7 @@
+[![Rutfront Redesign: Mockup online ansehen](assets/banner.svg)](https://mepfisto.github.io/rutfront-redesign/)
+
+**Online ansehen:** https://mepfisto.github.io/rutfront-redesign/ (passwortgeschützt, das Passwort gibt es getrennt vom Link)
+
 # rutfront-redesign
 
 Redesign-Mockup der kompletten Seite https://rutfront.koeln (Rutfront Fastelovendsbund e.V.):
