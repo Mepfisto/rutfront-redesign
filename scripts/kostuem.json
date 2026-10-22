@@ -57,7 +57,7 @@
  ],
  "fallback": {
   "level": "yellow",
-  "title": "Hm, das kenne ich noch nicht",
+  "title": "Möchtest du kurz die drei Fragen durchgehen?",
   "text": "Dazu hat die Ampel noch keine Meinung und schaut ein bisschen ratlos. Faustregel: Figuren und Fantasiewesen gehen fast immer, ganze Menschengruppen eher nicht.",
   "alt": "Drei Fragen helfen: Macht sich das Kostüm über Menschen lustig, die es ohnehin schwer haben? Ist es die Uniform von Menschen, die Gewalt ausüben? Gehört die Kultur, die du nachahmst, jemand anderem? Bei einem Ja lieber noch einmal überlegen."
  },
@@ -67,7 +67,7 @@
    "keys": [
     "einhorn"
    ],
-   "title": "Einhörner gibt es, wir haben Glitzer-Beweise",
+   "title": "Möchtest du Glitzer-Beweise sammeln? Gern!",
    "text": "Fabelwesen gehen immer, und dein Horn ist schon der Beweis. Niemand wird dich fragen, ob das ein Pferd ist.",
    "alt": "Regenbogen-Mähne dazu und der Abend gehört dir."
   },
@@ -80,7 +80,7 @@
     "koelsch",
     "kolsch"
    ],
-   "title": "Du bist die Stange und die Runde",
+   "title": "Möchtest du die Stange und die Runde sein?",
    "text": "Das Kölschglas-Kostüm ist das einzige, bei dem dich garantiert niemand fragt, ob du Durst hast.",
    "alt": "Schaumkrone aus Watte, bitte nicht mit echtem Kölsch füllen, sonst wird es nass."
   },
@@ -89,7 +89,7 @@
    "keys": [
     "nubbel"
    ],
-   "title": "Nubbel: heute noch Held, morgen Asche",
+   "title": "Möchtest du heute Held und morgen Asche sein?",
    "text": "Der Nubbel ist der Sündenbock der Session und wird in der Nacht zu Veilchendienstag symbolisch verbrannt. Dein Kostüm hoffentlich nicht mit.",
    "alt": "Strohhut ja, offenes Feuer bitte nur, wenn die Feuerwehr dabei ist."
   },
@@ -99,7 +99,7 @@
     "toast",
     "toastbrot"
    ],
-   "title": "Toastbrot: heute lieber knusprig",
+   "title": "Möchtest du lieber knusprig als labberig sein?",
    "text": "Toast ist harmlos, lustig und ein Gesprächsstarter. Bonus: Ab Mitternacht bist du das Frühstück.",
    "alt": "Butter und Marmelade in der Tasche, dann bist du komplett."
   },
@@ -108,7 +108,7 @@
    "keys": [
     "dino"
    ],
-   "title": "Rawr! Da ist ein Dino unter uns",
+   "title": "Möchtest du ein Dino unter uns sein? Rawr!",
    "text": "Dinosaurier sind seit 66 Millionen Jahren nicht mehr beleidigt worden. Sehr sicheres Kostüm.",
    "alt": "Kurzer Arm, großer Auftritt."
   },
@@ -117,7 +117,7 @@
    "keys": [
     "flamingo"
    ],
-   "title": "Auf einem Bein durch die Session",
+   "title": "Möchtest du auf einem Bein durch die Session?",
    "text": "Rosa Vögel mit langem Hals sorgen für gute Stimmung, und Stehen auf einem Bein ist ein Kölsch-Test.",
    "alt": "Rosa Strumpfhose und ein Kölsch in der Hand: Das ist Haltung."
   },
@@ -126,7 +126,7 @@
    "keys": [
     "astronaut"
    ],
-   "title": "Houston, wir haben eine Party",
+   "title": "Möchtest du eine Party im Weltall? Houston!",
    "text": "Mit Helm und Raumanzug bist du nicht zu übersehen und garantiert niemand ärgert sich.",
    "alt": "Gegen Schwerelosigkeit hilft nur ein Kölsch."
   },
@@ -135,7 +135,7 @@
    "keys": [
     "currywurst"
    ],
-   "title": "Eine Wurst mit Auftritt",
+   "title": "Möchtest du die Wurst mit Auftritt sein?",
    "text": "Curry und Soße gehen immer. Passt perfekt zum Kölner Imbiss um die Ecke.",
    "alt": "Pommes-Gabel als Zepter, dann gehört dir der Abend."
   },
@@ -145,7 +145,7 @@
     "klopapier",
     "toilettenpapier"
    ],
-   "title": "Eine Rolle für den ganzen Abend",
+   "title": "Möchtest du eine Rolle für den ganzen Abend sein?",
    "text": "Das Kostüm mit Wow-Effekt: weich, praktisch und garantiert schnell aufgebraucht.",
    "alt": "Reserverolle in der Tasche lassen."
   },
@@ -154,7 +154,7 @@
    "keys": [
     "marienkaefer"
    ],
-   "title": "Glück auf sechs Beinen",
+   "title": "Möchtest du Glück auf sechs Beinen bringen?",
    "text": "Der Marienkäfer ist niedlich, rot und trägt Punkte, ganz in den Vereinsfarben.",
    "alt": "Sieben Punkte sind Pflicht."
   },
@@ -163,7 +163,7 @@
    "keys": [
     "pumuckl"
    ],
-   "title": "Ein Kobold mit Haaren aus Feuer",
+   "title": "Möchtest du ein Kobold mit Feuer-Haaren sein?",
    "text": "Klabautermann mit Hobel: ein schönes Kostüm, das alle Altersgruppen erkennen.",
    "alt": "Eulenspiegel-Humor als Kostümzubehör."
   },
@@ -172,7 +172,7 @@
    "keys": [
     "pinguin"
    ],
-   "title": "Frack im Fastelovend",
+   "title": "Möchtest du im Frack durch den Fastelovend?",
    "text": "Pinguine sind elegant, flauschig und trotz Frack immer gut gelaunt.",
    "alt": "Eisschollen auf dem Dancefloor sind Pflicht."
   },
@@ -181,7 +181,7 @@
    "keys": [
     "fliegenpilz"
    ],
-   "title": "Rot-weiß gepunktet, fast Rut-Wiess",
+   "title": "Möchtest du fast Rut-Wiess sein, aber giftig?",
    "text": "Rote Kappe, weiße Punkte: die Farben der Rutfront in giftig. Zum Anschauen ideal, zum Essen nicht.",
    "alt": "Ein Glücksklee dazu und du bist der Glücksbringer."
   },
@@ -190,7 +190,7 @@
    "keys": [
     "schornsteinfeger"
    ],
-   "title": "Glück auf der Schulter, Ruß im Gesicht",
+   "title": "Möchtest du Glück bringen? Ruß inklusive.",
    "text": "Der Schornsteinfeger bringt Glück, kostet wenig und sieht auf Fotos großartig aus.",
    "alt": "Nicht jeden anfassen, der sich Glück wünscht."
   },
@@ -201,7 +201,7 @@
     "disco-kugel",
     "discokugel"
    ],
-   "title": "Du bist heute der Mittelpunkt",
+   "title": "Möchtest du heute der Mittelpunkt sein?",
    "text": "Die Disco-Kugel reflektiert alles, was um sie herum passiert, und macht gute Laune.",
    "alt": "Wer dich anstrahlt, mag dich."
   },
@@ -210,7 +210,7 @@
    "keys": [
     "banane"
    ],
-   "title": "Gelb, krumm, beliebt",
+   "title": "Möchtest du gelb, krumm und beliebt sein?",
    "text": "Die Banane ist kostümtechnisch ein Selbstläufer. Niemand rutscht auf dir aus, nur über dich.",
    "alt": "Mit Schale, wenn es sein muss."
   },
@@ -219,7 +219,7 @@
    "keys": [
     "pizza"
    ],
-   "title": "Alle wollen ein Stück von dir",
+   "title": "Möchtest du, dass alle ein Stück von dir wollen?",
    "text": "Pizza ist beliebt, lecker und in jeder Version erkennbar. Du wirst reichlich Fans haben.",
    "alt": "Belag nach Wunsch, nur keine Ananas-Debatte."
   },
@@ -229,7 +229,7 @@
     "meerjungfrau",
     "nixe"
    ],
-   "title": "Flosse mit Glitzer",
+   "title": "Möchtest du mit Glitzer-Flosse tanzen?",
    "text": "Meerjungfrau und Nixe sind Märchen, Glitzer und Wasserzauber auf einmal.",
    "alt": "Gehen musst du dafür nicht, tanzen schon."
   },
@@ -238,7 +238,7 @@
    "keys": [
     "=kuh"
    ],
-   "title": "Muh macht den Unterschied",
+   "title": "Möchtest du den Unterschied machen? Muh!",
    "text": "Die Kuh ist friedlich, fleckig und ein dankbares Kostüm mit Wiedererkennungswert.",
    "alt": "Kuhglocke aus Pappe, bitte nicht zu laut."
   },
@@ -254,7 +254,7 @@
     "kommissar",
     "sheriff"
    ],
-   "title": "Die Uniform bleibt heute im Schrank",
+   "title": "Möchtest du die Uniform nicht lieber im Schrank lassen?",
    "text": "Uniformen von Menschen mit Gewaltmonopol passen nicht zu einem Fest, bei dem sich alle wohlfühlen sollen. Das Liederheft sagt es ganz deutlich: 1312.",
    "alt": "Pappnase, Hut und ein Beutel Kamelle machen mehr Freunde als jede Dienstmarke."
   },
@@ -271,7 +271,7 @@
     "kampfanzug",
     "kampfpilot"
    ],
-   "title": "Tarnfarbe fällt im Glitzer nur auf",
+   "title": "Solltest du die Tarnfarbe nicht gegen Glitzer tauschen?",
    "text": "Kriegsspielzeug passt nicht zu einem Fest für alle. Im Liederheft steht der Soldat ebenfalls auf der Nein-Liste.",
    "alt": "Konfetti-Kanone statt Tarnfleck: Die Munition ist deutlich beliebter."
   },
@@ -284,7 +284,7 @@
     "wild west",
     "wildwest"
    ],
-   "title": "Yippie-ja-nein",
+   "title": "Möchtest du den Hut nicht lieber ohne Cowboy tragen?",
    "text": "Cowboy steht im Liederheft auf der Nein-Liste, neben SWAT und Soldat. Da lässt die Rutfront nicht mit sich handeln.",
    "alt": "Ein Hut geht trotzdem: Zylinder und Glitzer sehen sowieso besser aus."
   },
@@ -300,7 +300,7 @@
     "kriegsbemalung",
     "squaw"
    ],
-   "title": "Federn ja, aber bitte als Vogel",
+   "title": "Möchtest du die Federn nicht lieber als Vogel tragen?",
    "text": "Federschmuck ist für viele Indigene ein heiliges Zeichen. Er gehört nicht zum Karnevalszubehör, auch wenn er hübsch aussieht.",
    "alt": "Als Paradiesvogel kannst du so viele Federn tragen, wie du willst."
   },
@@ -322,7 +322,7 @@
     "orientalisch",
     "orientalin"
    ],
-   "title": "Kultur ist kein Kostüm, auch nicht mit Glitzer",
+   "title": "Möchtest du Kultur wirklich als Kostüm tragen?",
    "text": "Eine Kultur oder Religion zum Kostüm zu machen, bleibt ein Klischee, selbst wenn es gut gemeint ist.",
    "alt": "Wenn du die Aladin-Lampe liebst: Komm als Lampe. Die hat keine Gefühle zu verletzen."
   },
@@ -336,7 +336,7 @@
     "orthodoxer jude",
     "kippa"
    ],
-   "title": "Glaube ist kein Kostümkatalog",
+   "title": "Solltest du Glauben aus dem Kostümkatalog streichen?",
    "text": "Die Kleidung einer religiösen Minderheit zur Verkleidung zu machen, trifft schnell Menschen, die dafür angefeindet werden.",
    "alt": "Such dir lieber eine Figur: Zauberer*in, Wolke oder Disco-Kugel."
   },
@@ -359,7 +359,7 @@
     "menschenfresser",
     "=wilde"
    ],
-   "title": "Schubladen sind nur für Socken",
+   "title": "Möchtest du lieber eine Figur statt einer Schublade sein?",
    "text": "Wenn das Kostüm eine ganze Menschengruppe auf ein Klischee reduziert, ist es eher Spott als Spaß.",
    "alt": "Nimm eine Figur statt einer Nationalität: Ein Taco aus Filz begeistert alle."
   },
@@ -443,7 +443,7 @@
     "messdiener",
     "buddha"
    ],
-   "title": "Himmlisch, aber mit Fingerspitzengefühl",
+   "title": "Solltest du es mit Fingerspitzengefühl angehen?",
    "text": "Kölsch und katholisch gehören irgendwie zusammen, aber Glaubenssymbole sind vielen heilig. Mit Augenzwinkern ja, mit Hohn nein.",
    "alt": "Das Weihwasser bleibt in der Kirche, im Glas dürfen es Kölsch und Himbeere sein."
   },
@@ -464,7 +464,7 @@
     "rote funken",
     "blaue funken"
    ],
-   "title": "Echte Uniform, echte Tradition",
+   "title": "Möchtest du statt der echten Uniform lieber dein eigenes Kostüm?",
    "text": "Korpsuniformen sind Handwerk, Tradition und oft Maßarbeit. Wer sie nachmacht, kann schnell nach Spott aussehen.",
    "alt": "Im Rut-Wiess-Stil und in deiner eigenen Version geht es meist besser. Oder du fragst die Schneiderin."
   },
@@ -482,7 +482,7 @@
     "machete",
     "schwert"
    ],
-   "title": "Waffen? Lieber Waffeln!",
+   "title": "Möchtest du lieber Waffeln statt Waffen mitbringen?",
    "text": "Waffenattrappen sind bei vielen Feiern verboten und machen schnell schlechte Stimmung. Das wollen wir nicht.",
    "alt": "Anzug, Hut und eine Zigarre aus Schokolade reichen völlig."
   },
@@ -499,7 +499,7 @@
     "notarzt",
     "krankenpfleger"
    ],
-   "title": "Fast ein*e Held*in, aber ohne Notruf",
+   "title": "Möchtest du lieber den Pappnasen-Doktor machen?",
    "text": "Meist okay, aber Kleidung von Helfenden kann im Ernstfall verwirren. Ein bisschen Fantasie hilft.",
    "alt": "Der Pappnasen-Doktor mit Spielzeug-Stethoskop sorgt für klare Verhältnisse."
   },
@@ -519,7 +519,7 @@
     "drag king",
     "drag-king"
    ],
-   "title": "Drag ja, Spott nein",
+   "title": "Möchtest du Drag als Bühne statt als Pointe feiern?",
    "text": "Drag ist Kunst und Spaß, Verkleidung als Witz über trans* Menschen ist es nicht. Der Unterschied liegt im Respekt.",
    "alt": "Mehr Glitzer, mehr Absatz, mehr Mut: Mach es zur Bühne, nicht zur Pointe."
   },
@@ -533,7 +533,7 @@
     "aloha",
     "blumenkette"
    ],
-   "title": "Aloha, aber mit Köpfchen",
+   "title": "Möchtest du Aloha mit Köpfchen feiern?",
    "text": "Hula-Röckchen und Blumenkette sind für viele Hawaiianer*innen mehr als Partyzeug. Mit Respekt geht es, als Klischee eher nicht.",
    "alt": "Als Ananas oder Flamingo sagt niemand etwas, und Spaß macht es trotzdem."
   },
@@ -548,7 +548,7 @@
     "einbrecher",
     "handschellen"
    ],
-   "title": "Räuber ja, Gendarm nein",
+   "title": "Möchtest du Räuber sein, aber ohne Gendarm-Uniform?",
    "text": "Räuber und Banditen sind Klassiker. Wenn Handschellen und Uniform dazukommen, wird es schnell zum Polizei-Kostüm.",
    "alt": "Mit Plüsch-Handschellen und Maske bist du ein Räuber mit Herz."
   },
@@ -566,7 +566,7 @@
     "diktator",
     "minister"
    ],
-   "title": "Pieksen ja, aber bitte nach oben",
+   "title": "Möchtest du nach oben pieksen statt nach unten?",
    "text": "Karneval darf Mächtige aufs Korn nehmen, das ist alte Tradition. Nach unten treten ist nicht lustig.",
    "alt": "Eine überzeichnete Maske und ein Kamelle-Beutel zum Verteilen: Das ist Satire."
   },
@@ -582,7 +582,7 @@
     "rot weiss",
     "rot-wiess"
    ],
-   "title": "Rut-Wiess: Du hast es verstanden!",
+   "title": "Solltest du die Vereinsfarben tragen? Unbedingt!",
    "text": "Die Vereinsfarben gehen immer. Mit dem Soli-Schal zeigst du außerdem Haltung.",
    "alt": "Dazu passt ein Kölsch."
   },
@@ -600,7 +600,7 @@
     "diskokugel",
     "lametta"
    ],
-   "title": "Pappnas und Glitzer, ganz im Sinne des Liederheftes",
+   "title": "Möchtest du noch mehr Glitzer? Das Liederheft sagt ja.",
    "text": "Genau das steht im Liederheft: Pappnas, Hut, Glitzer, Federn, alles voll gut.",
    "alt": "Noch mehr Glitzer geht immer."
   },
@@ -615,7 +615,7 @@
     "karnevalsprinz",
     "bauer und jungfrau"
    ],
-   "title": "Kölsche Klassiker mit Krönchen",
+   "title": "Möchtest du kölsch und königlich sein? Läuft!",
    "text": "Traditionell, kölsch und gern gesehen. Die Rutfront ist ja traditionalistisch.",
    "alt": "Nimm Glitzer in den Vereinsfarben dazu."
   },
@@ -638,7 +638,7 @@
     "rheinfaehre",
     "kranhaus"
    ],
-   "title": "Kölsches Urgestein, jetzt tragbar",
+   "title": "Möchtest du kölsches Urgestein tragen? Sehr gern!",
    "text": "Kölsche Wahrzeichen und Originale gehen immer. Der Nubbel wird am Ende zwar verbrannt, aber nur symbolisch.",
    "alt": "Stell dir ein Kölsch dazu, als Kostümteil und als Verpflegung."
   },
@@ -711,7 +711,7 @@
     "seepferdchen",
     "yeti"
    ],
-   "title": "Tierisch gut",
+   "title": "Möchtest du tierisch gut aussehen? Dann los!",
    "text": "Tiere und Fantasiewesen gehen fast immer. Niemand fühlt sich auf den Schlips getreten, höchstens auf den Schwanz.",
    "alt": "Mit Glitzer. Immer mit Glitzer."
   },
@@ -741,7 +741,7 @@
     "aquaman",
     "flash"
    ],
-   "title": "Held*in des Abends",
+   "title": "Solltest du Held*in des Abends werden? Gern!",
    "text": "Figuren aus Comic und Weltall sind unproblematisch. Das Cape bitte nicht in die Theke hängen.",
    "alt": "Zeig dein Alter Ego, es hat bestimmt einen kölschen Namen."
   },
@@ -790,7 +790,7 @@
     "wickie",
     "maus und elefant"
    ],
-   "title": "Kindheitshelden dürfen alles",
+   "title": "Möchtest du deinen Kindheitshelden feiern? Unbedingt!",
    "text": "Comic-, Märchen- und Filmfiguren sind fast immer sicher. Die Nostalgie macht den Rest.",
    "alt": "Wenn du die Figur singst, hast du auf jeder Party gewonnen."
   },
@@ -812,7 +812,7 @@
     "akrobat",
     "zauberer im zirkus"
    ],
-   "title": "Jeck bleibt Jeck",
+   "title": "Möchtest du ein Jeck sein? Bist du schon!",
    "text": "Der Klassiker unter den Verkleidungen. Schon im Mittelalter durfte der Narr die Wahrheit sagen.",
    "alt": "Mit roter Pappnase, versteht sich."
   },
@@ -832,7 +832,7 @@
     "poseidon",
     "neptun"
    ],
-   "title": "Ahoi, ihr Landratten",
+   "title": "Möchtest du die Landratten begrüßen? Ahoi!",
    "text": "Seeräuber mit Papagei gehen immer. Den Säbel bitte aus Plastik oder gleich daheim lassen.",
    "alt": "Und das Bein muss wirklich niemand wegbinden."
   },
@@ -865,7 +865,7 @@
     "gnom",
     "drachenreiter"
    ],
-   "title": "Himmel, Hölle und ein bisschen Zauberei",
+   "title": "Möchtest du ein bisschen zaubern? Nur zu!",
    "text": "Übernatürliche Wesen sind kostümtechnisch sicher. Bei der Hexe darfst du an die Frauen denken, die früher zu Unrecht verfolgt wurden.",
    "alt": "Ein bisschen Nebelmaschine schadet nicht."
   },
@@ -890,7 +890,7 @@
     "flower power",
     "gameboy"
    ],
-   "title": "Zeitreise in Lieblingsjahrzehnte",
+   "title": "Möchtest du in deine Lieblingsjahre reisen? Gern!",
    "text": "Jahrzehnte und Musikstile sind eine sichere Wahl. Die Schlaghose steht dir.",
    "alt": "Dazu eine Playlist für die Kneipe."
   },
@@ -917,7 +917,7 @@
     "troubadour",
     "minnesaenger"
    ],
-   "title": "Geschichte macht Spaß",
+   "title": "Möchtest du mit der Geschichte feiern? Läuft!",
    "text": "Epochen und Kostüme aus der Geschichte sind meist gut zu tragen. Das Schwert bitte aus Pappe.",
    "alt": "Die Krone aus Glitzerpapier sitzt bei fast allen."
   },
@@ -932,7 +932,7 @@
     "odin",
     "loki"
    ],
-   "title": "Ahoi, kleine Wikinger",
+   "title": "Möchtest du ein kleiner Wikinger sein? Ahoi!",
    "text": "Wikinger gehen. Nur Runen-Tattoos und Symbole lässt du lieber weg, die werden gern von Rechten geklaut.",
    "alt": "Hörnerhelm, Fellweste, Kölsch-Humpen als Trinkhorn: Das reicht schon."
   },
@@ -1006,7 +1006,7 @@
     "kaesebroetchen",
     "frikadelle"
    ],
-   "title": "Kulinarisch jeck",
+   "title": "Möchtest du kulinarisch jeck gehen? Guten Appetit!",
    "text": "Essen und Trinken gehen immer. Niemand kann dich dafür tadeln, außer der Hunger.",
    "alt": "Als Currywurst: Tipp an die Fotograf*innen, du bist nicht zu übersehen."
   },
@@ -1078,7 +1078,7 @@
     "gaensebluemchen",
     "sonnenblume"
    ],
-   "title": "Alltagsgegenstände auf Tour",
+   "title": "Möchtest du als Alltagsgegenstand auftreten? Los!",
    "text": "Gegenstände als Kostüm sind lustig, harmlos und garantiert gesprächsstartend. Pappe und Heißkleber sind dein Freund.",
    "alt": "Wer als Glühbirne kommt, hat zumindest eine Idee."
   },
@@ -1133,7 +1133,7 @@
     "oma",
     "hausmeister"
    ],
-   "title": "Mit Beruf und Berufung",
+   "title": "Möchtest du im Beruf glänzen? Gern!",
    "text": "Alltagsberufe gehen als Kostüm fast immer durch. Der Witz liegt in der Übertreibung, nicht im Spott.",
    "alt": "Schürze, Schaufel oder Taktstock: Das Werkzeug macht die Verkleidung."
   },
@@ -1157,7 +1157,7 @@
     "bee gees",
     "prince"
    ],
-   "title": "Pop und Rock zum Anziehen",
+   "title": "Möchtest du auf die Bühne? Zugabe!",
    "text": "Musikfiguren sind beliebt und lassen sich gut erkennen. Spiel ruhig laut, solange die Nachbarschaft mitsingt.",
    "alt": "Mit Mikrofonständer wird es noch besser."
   },
@@ -1176,7 +1176,7 @@
     "jogginghose",
     "kuscheldecke"
    ],
-   "title": "Der bequemste Jeck der Welt",
+   "title": "Möchtest du der bequemste Jeck sein? Natürlich!",
    "text": "Bequem geht vor. Wenn es warm ist und du dich wohlfühlst, ist das schon ein Kostüm.",
    "alt": "Mit Kuscheltier und Pappnase bist du perfekt ausgestattet."
   },
@@ -1198,7 +1198,7 @@
     "opi",
     "kinderwagen"
    ],
-   "title": "Familienfeier mit Kamelle",
+   "title": "Möchtest du mit der Familie feiern? Dann los!",
    "text": "Hochzeit, Baby oder Familie: alles gute Themen. Wenn du ein Kind begleitest, nimm Ohrenschützer mit.",
    "alt": "Zum Kölsch gibt es heute Reis."
   },
@@ -1216,7 +1216,7 @@
     "pan pride",
     "ace pride"
    ],
-   "title": "Regenbogen: Genau so!",
+   "title": "Solltest du Regenbogen tragen? Unbedingt!",
    "text": "Regenbogen und Pride sind bei der Rutfront besonders willkommen. Mehr Farbe geht kaum.",
    "alt": "Hol dir noch einen Glitzerstreifen auf die Wange."
   },
@@ -1233,7 +1233,7 @@
     "wie immer",
     "nix"
    ],
-   "title": "Auch ohne Kostüm bist du willkommen",
+   "title": "Möchtest du ohne Kostüm kommen? Auch willkommen!",
    "text": "Mit Pappnase und guter Laune bist du genauso dabei wie alle anderen. Der Rest ist Zugabe.",
    "alt": "Ein Stück Glitzer im Gesicht macht dich zur Berühmtheit."
   }
