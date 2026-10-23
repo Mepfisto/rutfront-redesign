@@ -72,4 +72,7 @@ rmdir .enc-tmp
 # Selbsttest: entschlüsselt die erzeugte Seite mit dem eben eingegebenen Passwort?
 ./check-password.sh docs/index.html
 
-echo "Fertig: docs/ (verschlüsselt). Jetzt committen und pushen."
+# Datum der letzten Aktualisierung für das Badge im README (shields.io-Endpoint, liegt im Repo und wird mit gepusht)
+printf '{"schemaVersion":1,"label":"Seite aktualisiert","message":"%s","color":"brightgreen"}\n' "$(date +%d.%m.%Y)" > badge-update.json
+
+echo "Fertig: docs/ (verschlüsselt). Jetzt committen und pushen (git add docs badge-update.json)."

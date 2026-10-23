@@ -1,5 +1,8 @@
 [![Rutfront Redesign: Mockup online ansehen](assets/banner.svg)](https://mepfisto.github.io/rutfront-redesign/)
 
+[![Webseite](https://img.shields.io/website?url=https%3A%2F%2Fmepfisto.github.io%2Frutfront-redesign%2F&label=Webseite&logo=githubpages&logoColor=white&up_message=online&down_message=offline&up_color=brightgreen&down_color=red)](https://mepfisto.github.io/rutfront-redesign/)
+[![Seite aktualisiert](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2FMepfisto%2Frutfront-redesign%2Fmain%2Fbadge-update.json&logo=github&logoColor=white)](https://github.com/Mepfisto/rutfront-redesign/commits/main/docs)
+
 **Online ansehen:** https://mepfisto.github.io/rutfront-redesign/ (passwortgeschützt, das Passwort gibt es getrennt vom Link)
 
 # rutfront-redesign
@@ -50,7 +53,7 @@ Dann http://localhost:8792 öffnen. Kein npm-Install nötig (Node 18+).
 ## Veröffentlichen (GitHub Pages, passwortgeschützt)
 
 1. `./build.sh` ausführen (`--refresh` lädt vorher die aktuellen Inhalte) und das Passwort eingeben.
-2. `docs/` und `.staticrypt.json` committen und pushen.
+2. `docs/`, `.staticrypt.json` und `badge-update.json` committen und pushen (das Datum im Badge „Seite aktualisiert“ kommt aus `badge-update.json`).
 3. Im Repo unter Settings → Pages: „Deploy from a branch", Branch `main`, Ordner `/docs`.
 4. Link und Passwort getrennt an die Kollegin / den Kollegen geben.
 
